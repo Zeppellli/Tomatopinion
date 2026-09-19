@@ -5,6 +5,11 @@ public class LoadableObject : MonoBehaviour
 {
     [SerializeField] private string[] listeningToIDs;
 
+    [SerializeField] private bool isHat;
+    [SerializeField] private bool isBowtie;
+    [HideInInspector] public static bool loadHats = false;
+    [HideInInspector] public static bool loadBowties = false;
+
     private void Awake()
     {
         GameSceneManager.OnSceneLoaded += LoadSelf;
@@ -14,6 +19,12 @@ public class LoadableObject : MonoBehaviour
     {
         GameSceneManager.OnSceneLoaded -= LoadSelf;
         GameSceneManager.OnSceneUnloaded -= UnloadSelf;
+    }
+
+    private void Start()
+    {
+        if (isHat) { gameObject.SetActive(loadHats); }
+        if (isBowtie) { gameObject.SetActive(loadBowties); }
     }
 
     private void LoadSelf(string id)
