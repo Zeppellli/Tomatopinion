@@ -1,0 +1,520 @@
+fileFormatVersion: 2
+guid: 59cc65a3714f9d74c80fba653872a24a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7803204389463768103
+    second: tomatopinion_title_0
+  - first:
+      213: 2415093865901343812
+    second: tomatopinion_title_1
+  - first:
+      213: 4746887394648232860
+    second: tomatopinion_title_2
+  - first:
+      213: 3208712886305602711
+    second: tomatopinion_title_3
+  - first:
+      213: 2312469749135604747
+    second: tomatopinion_title_4
+  - first:
+      213: -3883844283940079124
+    second: tomatopinion_title_5
+  - first:
+      213: -1889793670896722796
+    second: tomatopinion_title_6
+  - first:
+      213: 3903067080944023298
+    second: tomatopinion_title_7
+  - first:
+      213: -2599402837388573534
+    second: tomatopinion_title_8
+  - first:
+      213: -6367201545116589356
+    second: tomatopinion_title_9
+  - first:
+      213: -4829732881318685460
+    second: tomatopinion_title_10
+  - first:
+      213: -3271535041126769877
+    second: tomatopinion_title_11
+  - first:
+      213: -5013001188830333353
+    second: tomatopinion_title_12
+  - first:
+      213: 1358755892056189853
+    second: tomatopinion_title_13
+  - first:
+      213: -79600478071239294
+    second: tomatopinion_title_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tomatopinion_title_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 60
+        width: 490
+        height: 645
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d34e3073f275b390800000000000000
+      internalID: -7803204389463768103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatopinion_title_1
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 77
+        width: 280
+        height: 457
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44446484313248120800000000000000
+      internalID: 2415093865901343812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatopinion_title_2
+      rect:
+        serializedVersion: 2
+        x: 1690
+        y: 116
+        width: 588
+        height: 392
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9399c27fe450e140800000000000000
+      internalID: 4746887394648232860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatopinion_title_3
+      rect:
+        serializedVersion: 2
+        x: 2607
+        y: 424
+        width: 117
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79cb67e9e53a78c20800000000000000
+      internalID: 3208712886305602711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatopinion_title_4
+      rect:
+        serializedVersion: 2
+        x: 2740
+        y: 193
+        width: 225
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0c701f1cfa871020800000000000000
+      internalID: 2312469749135604747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatopinion_title_5
+      rect:
+        serializedVersion: 2
+        x: 3012
+        y: 412
+        width: 94
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce9f1d48330d91ac0800000000000000
+      internalID: -3883844283940079124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatopinion_title_6
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 97
+        width: 305
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49c5b6b3baa16c5e0800000000000000
+      internalID: -1889793670896722796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatopinion_title_7
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 110
+        width: 339
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 207703ea4da7a2630800000000000000
+      internalID: 3903067080944023298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatopinion_title_8
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 69
+        width: 260
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a4cf4144e01debd0800000000000000
+      internalID: -2599402837388573534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatopinion_title_9
+      rect:
+        serializedVersion: 2
+        x: 1660
+        y: 294
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d2e10afde723a7a0800000000000000
+      internalID: -6367201545116589356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatopinion_title_10
+      rect:
+        serializedVersion: 2
+        x: 2269
+        y: 2
+        width: 295
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce4d9f0988759fcb0800000000000000
+      internalID: -4829732881318685460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatopinion_title_11
+      rect:
+        serializedVersion: 2
+        x: 2572
+        y: 177
+        width: 115
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2b5563a63c2992d0800000000000000
+      internalID: -3271535041126769877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatopinion_title_12
+      rect:
+        serializedVersion: 2
+        x: 3002
+        y: 185
+        width: 102
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75638219afd3e6ab0800000000000000
+      internalID: -5013001188830333353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatopinion_title_13
+      rect:
+        serializedVersion: 2
+        x: 3155
+        y: 161
+        width: 266
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9b6a7ae8454bd210800000000000000
+      internalID: 1358755892056189853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatopinion_title_14
+      rect:
+        serializedVersion: 2
+        x: 3448
+        y: 130
+        width: 254
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28dcc9479c335eef0800000000000000
+      internalID: -79600478071239294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      tomatopinion_title_0: -7803204389463768103
+      tomatopinion_title_1: 2415093865901343812
+      tomatopinion_title_10: -4829732881318685460
+      tomatopinion_title_11: -3271535041126769877
+      tomatopinion_title_12: -5013001188830333353
+      tomatopinion_title_13: 1358755892056189853
+      tomatopinion_title_14: -79600478071239294
+      tomatopinion_title_2: 4746887394648232860
+      tomatopinion_title_3: 3208712886305602711
+      tomatopinion_title_4: 2312469749135604747
+      tomatopinion_title_5: -3883844283940079124
+      tomatopinion_title_6: -1889793670896722796
+      tomatopinion_title_7: 3903067080944023298
+      tomatopinion_title_8: -2599402837388573534
+      tomatopinion_title_9: -6367201545116589356
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -68,7 +68,10 @@ public class DialogueManager : Singleton<DialogueManager>
             yield break;
         }
 
-        yield return StartCoroutine(FadeImage(textBG, 1, fadeDuration));
+        if (textBG.color.a != 1) //if already on, don't wait again
+        {
+            yield return StartCoroutine(FadeImage(textBG, 1, fadeDuration));
+        }
 
         DialogueLine currentLine = dialogue.dialogueLinesInOrder[lineIndex];
 
