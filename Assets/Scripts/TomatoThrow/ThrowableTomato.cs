@@ -17,6 +17,7 @@ public class ThrowableTomato : MonoBehaviour
     [SerializeField] private float scaleOnLanding = 0.3f;
     private Vector3 targetAbsoluteScale;
     [SerializeField] private GameObject Splash;
+    [SerializeField] private bool moveable;
     private bool isThrown = false;
     [SerializeField] private float minimumThrowVelocity = 100;
     [SerializeField] private Transform targetHeight;
@@ -36,15 +37,12 @@ public class ThrowableTomato : MonoBehaviour
         {
             sendTomatoToTarget();
         }
-        else { 
-            if (HasThrowVelocity() && Mouse.current.leftButton.isPressed)
-            {
-                isThrown = true;
-            }
-            else { 
-                CalculateMouseVelocity();
-                MoveTomatoTowardsMouse();
-            }
+        else if (!isThrown){             
+             
+            CalculateMouseVelocity();
+            if(moveable) MoveTomatoTowardsMouse();
+            
+            
         }
 
         if (transform.position.y == targetPosition.y && lastPosition == transform.position)
@@ -109,7 +107,6 @@ public class ThrowableTomato : MonoBehaviour
     {
         return isThrown;
     }
-
     void CalculateLobOffset()
     {
 

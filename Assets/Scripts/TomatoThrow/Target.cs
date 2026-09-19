@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Target : MonoBehaviour
 {
     private SpriteRenderer sprite;
+    [SerializeField] private string targetScene;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,9 +17,9 @@ public class Target : MonoBehaviour
         
     }
 
-    public void ChangeColor(Color color)
-    { 
-        sprite.color = color;
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        print("yo");
+        SceneManager.LoadScene(targetScene);
     }
-
 }

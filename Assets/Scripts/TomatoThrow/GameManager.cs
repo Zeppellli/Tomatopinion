@@ -19,12 +19,10 @@ public class GameManager : MonoBehaviour
         if (tomato.HasThrowVelocity() && Mouse.current.leftButton.isPressed && !tomato.checkIfThrown())
         {
             tomato.ThrowTomato();
-            targetSelector.StopAiming();
-            chosenTarget = targetSelector.GetCurrentTarget();
         }
         if (Mouse.current.rightButton.isPressed)
         {
-            SceneManager.LoadScene("TestLevel");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
