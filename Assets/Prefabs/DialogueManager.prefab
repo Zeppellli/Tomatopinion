@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6713060646333624913
+--- !u!1 &7450099949564934400
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1343366625108443666}
-  - component: {fileID: 7907739127339345852}
+  - component: {fileID: 5835197099006019246}
+  - component: {fileID: 4726345661741139528}
   m_Layer: 0
-  m_Name: GameSceneManager
+  m_Name: DialogueManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1343366625108443666
+--- !u!4 &5835197099006019246
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6713060646333624913}
+  m_GameObject: {fileID: 7450099949564934400}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -32,34 +32,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7907739127339345852
+--- !u!114 &4726345661741139528
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6713060646333624913}
+  m_GameObject: {fileID: 7450099949564934400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ec8629077a038e4eb52594ee5e72953, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e249a3805120f742b789b918de68edd, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameSceneManager
-  scene_IDs:
-  - 0
-  - 1
-  - 2a
-  - 2b
-  - 3a
-  - 3b
-  - 3c
-  - 4a
-  - 4b
-  - 4c
-  - x1
-  - x2
-  - x3
-  - x4
-  - x5
-  - x6
-  - XX
-  startingSceneID: 0
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
+  textHolder: {fileID: 0}
+  textBG: {fileID: 0}
+  all_dialogues:
+  - id: 
+    dialogue: {fileID: 0}
+    isStopped: 0
+  - id: 1
+    dialogue: {fileID: 11400000, guid: b0ee0668c2d58314d9066da14833e7b0, type: 2}
+    isStopped: 0
+  - id: 2a
+    dialogue: {fileID: 11400000, guid: 47f58665295a9ab45ae2b86f3c3bbc1a, type: 2}
+    isStopped: 0
+  fadeDuration: 0.75

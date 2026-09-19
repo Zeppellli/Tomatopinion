@@ -5,7 +5,7 @@ public class LoadableObject : MonoBehaviour
 {
     [SerializeField] private string[] listeningToIDs;
 
-    private void Start()
+    private void Awake()
     {
         GameSceneManager.OnSceneLoaded += LoadSelf;
         GameSceneManager.OnSceneUnloaded += UnloadSelf;
