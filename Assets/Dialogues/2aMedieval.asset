@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85cd55c6b0955304c90bc3c8ea81e738, type: 3}
+  m_Name: 2aMedieval
+  m_EditorClassIdentifier: Assembly-CSharp::FullSceneDialogue
+  dialogueLinesInOrder:
+  - line: ' I hereby condemn thee to perish by the sacred flame for the following
+      crimes'
+    duration: 4
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 0
+  - line: theft against the church,
+    duration: 2
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+  - line: blasphemous life,
+    duration: 1.5
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+  - line: bearing false witness before the Almighty,
+    duration: 2
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+  - line: ' heresy'
+    duration: 1
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+  - line: ' and deviltry.'
+    duration: 1
+    delayBeforeNextLine: 1
+    backgroundFadeAwayOnEnd: 1
+  - line: 'May this glorious, purging fire cleanse thy wretched soul of all its sins. '
+    duration: 6
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 1
