@@ -59,7 +59,7 @@ public class DialogueManager : Singleton<DialogueManager>
         if (dialogue.dialogueLinesInOrder[lineIndex].line.Contains(DIALOGUEENDING_STRING_MARKER)) //GO TO NEXT SCENE 
         {
             StartCoroutine(FadeImage(textBG, 0, fadeDuration));
-            
+
             yield return new WaitForSeconds(dialogue.dialogueLinesInOrder[lineIndex].duration);
 
             string foundID = Regex.Match(dialogue.dialogueLinesInOrder[lineIndex].line, @"\((.*?)\)").Groups[1].Value;
@@ -68,11 +68,15 @@ public class DialogueManager : Singleton<DialogueManager>
             yield break;
         }
 
-        yield return StartCoroutine(FadeImage(textBG, 1, fadeDuration));
+        if (textBG.color.a != 1) //if already on, don't wait again
+        {
+            yield return StartCoroutine(FadeImage(textBG, 1, fadeDuration));
+        }
 
         DialogueLine currentLine = dialogue.dialogueLinesInOrder[lineIndex];
 
         textHolder.text = currentLine.line;
+        StartCoroutine(SoundManager.Instance.PlayForDuration(currentLine.voice, currentLine.duration));
 
         yield return new WaitForSeconds(currentLine.duration);
 

@@ -14,4 +14,5 @@ public class DialogueLine
     public float duration;
     public float delayBeforeNextLine;
     public bool backgroundFadeAwayOnEnd;
+    public SoundManager.Voices voice;
 }

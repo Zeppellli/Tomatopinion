@@ -1,0 +1,676 @@
+fileFormatVersion: 2
+guid: e6c1149d26065974ea2ff07964fb6544
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -519926379271087055
+    second: tomatoTuto_0
+  - first:
+      213: -5734801241821708432
+    second: tomatoTuto_1
+  - first:
+      213: 7665082776553870547
+    second: tomatoTuto_2
+  - first:
+      213: 56588846803658696
+    second: tomatoTuto_3
+  - first:
+      213: -5517539150086240070
+    second: tomatoTuto_4
+  - first:
+      213: 5228322374286188758
+    second: tomatoTuto_5
+  - first:
+      213: -977665266388986513
+    second: tomatoTuto_6
+  - first:
+      213: 8716381758565612364
+    second: tomatoTuto_7
+  - first:
+      213: 7668632450348715979
+    second: tomatoTuto_8
+  - first:
+      213: 1979084339218292291
+    second: tomatoTuto_9
+  - first:
+      213: -6004034169194865409
+    second: tomatoTuto_10
+  - first:
+      213: -2896570849682332599
+    second: tomatoTuto_11
+  - first:
+      213: -7532439517265439849
+    second: tomatoTuto_12
+  - first:
+      213: -3634897840919884700
+    second: tomatoTuto_13
+  - first:
+      213: 4578364563673549675
+    second: tomatoTuto_14
+  - first:
+      213: -3864445007075841843
+    second: tomatoTuto_15
+  - first:
+      213: 1755154748336323103
+    second: tomatoTuto_16
+  - first:
+      213: 247306666531337853
+    second: tomatoTuto_17
+  - first:
+      213: -1636162826693992275
+    second: tomatoTuto_18
+  - first:
+      213: -8127109035480512820
+    second: tomatoTuto_19
+  - first:
+      213: 155291730651021970
+    second: tomatoTuto_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tomatoTuto_0
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 286
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13c113676b9d8c8f0800000000000000
+      internalID: -519926379271087055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatoTuto_1
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 314
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07f7fb3a7a4e960b0800000000000000
+      internalID: -5734801241821708432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatoTuto_2
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 189
+        width: 71
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d455768c28df5a60800000000000000
+      internalID: 7665082776553870547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatoTuto_3
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 287
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c72bff914b09c000800000000000000
+      internalID: 56588846803658696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatoTuto_4
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 281
+        width: 38
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab88ccc4063cd63b0800000000000000
+      internalID: -5517539150086240070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatoTuto_5
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 253
+        width: 39
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d02e82af7bbe8840800000000000000
+      internalID: 5228322374286188758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatoTuto_6
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 242
+        width: 44
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6595afbe92ae62f0800000000000000
+      internalID: -977665266388986513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatoTuto_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 236
+        width: 40
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4b7ffd270fc6f870800000000000000
+      internalID: 8716381758565612364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatoTuto_8
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 206
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcf811c55947c6a60800000000000000
+      internalID: 7668632450348715979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatoTuto_9
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 205
+        width: 28
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34e15ab88be177b10800000000000000
+      internalID: 1979084339218292291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatoTuto_10
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 200
+        width: 33
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffc15dddbb26daca0800000000000000
+      internalID: -6004034169194865409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatoTuto_11
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 200
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 944eeeda8205dc7d0800000000000000
+      internalID: -2896570849682332599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatoTuto_12
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 193
+        width: 34
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7935749ea26677790800000000000000
+      internalID: -7532439517265439849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatoTuto_13
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 193
+        width: 38
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46cc2251caf3e8dc0800000000000000
+      internalID: -3634897840919884700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatoTuto_14
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 151
+        width: 59
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6b8ffd305e998f30800000000000000
+      internalID: 4578364563673549675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatoTuto_15
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 144
+        width: 39
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc86633adbbbe5ac0800000000000000
+      internalID: -3864445007075841843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatoTuto_16
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 142
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1a3d64c1ff8b5810800000000000000
+      internalID: 1755154748336323103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatoTuto_17
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 130
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d76bf295a1c9e6300800000000000000
+      internalID: 247306666531337853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatoTuto_18
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 126
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da0a430f39e2b49e0800000000000000
+      internalID: -1636162826693992275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatoTuto_19
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 101
+        width: 103
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc601593465b63f80800000000000000
+      internalID: -8127109035480512820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatoTuto_20
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 71
+        width: 176
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 292820a9105b72200800000000000000
+      internalID: 155291730651021970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      tomatoTuto_0: -519926379271087055
+      tomatoTuto_1: -5734801241821708432
+      tomatoTuto_10: -6004034169194865409
+      tomatoTuto_11: -2896570849682332599
+      tomatoTuto_12: -7532439517265439849
+      tomatoTuto_13: -3634897840919884700
+      tomatoTuto_14: 4578364563673549675
+      tomatoTuto_15: -3864445007075841843
+      tomatoTuto_16: 1755154748336323103
+      tomatoTuto_17: 247306666531337853
+      tomatoTuto_18: -1636162826693992275
+      tomatoTuto_19: -8127109035480512820
+      tomatoTuto_2: 7665082776553870547
+      tomatoTuto_20: 155291730651021970
+      tomatoTuto_3: 56588846803658696
+      tomatoTuto_4: -5517539150086240070
+      tomatoTuto_5: 5228322374286188758
+      tomatoTuto_6: -977665266388986513
+      tomatoTuto_7: 8716381758565612364
+      tomatoTuto_8: 7668632450348715979
+      tomatoTuto_9: 1979084339218292291
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
