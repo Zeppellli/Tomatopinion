@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,11 +16,13 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (tomato.HasThrowVelocity() && Mouse.current.leftButton.isPressed)
+        if (tomato.HasThrowVelocity() && Mouse.current.leftButton.isPressed && !tomato.checkIfThrown())
         {
             tomato.ThrowTomato();
-            targetSelector.StopAiming();
-            chosenTarget = targetSelector.GetCurrentTarget();
+        }
+        if (Mouse.current.rightButton.isPressed)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

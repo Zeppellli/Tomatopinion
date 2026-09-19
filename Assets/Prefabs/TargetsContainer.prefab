@@ -78,7 +78,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff4bd489beec8034a9844abc75eb35ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  currentTargetTransform: {fileID: 0}
 --- !u!1001 &1618473982806952097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -87,6 +86,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1397972785028744755}
     m_Modifications:
+    - target: {fileID: 4917244543732627357, guid: aca9234b1a3ed1449be3beb45497776d, type: 3}
+      propertyPath: targetScene
+      value: TestLevel2
+      objectReference: {fileID: 0}
     - target: {fileID: 8276295521717477127, guid: aca9234b1a3ed1449be3beb45497776d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.15436
@@ -149,6 +152,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1397972785028744755}
     m_Modifications:
+    - target: {fileID: 4917244543732627357, guid: aca9234b1a3ed1449be3beb45497776d, type: 3}
+      propertyPath: targetScene
+      value: TestLevel
+      objectReference: {fileID: 0}
     - target: {fileID: 8276295521717477127, guid: aca9234b1a3ed1449be3beb45497776d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.95564
