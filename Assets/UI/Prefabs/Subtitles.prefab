@@ -147,7 +147,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1617702393290285420}
   - component: {fileID: 4469366429723077417}
-  - component: {fileID: 1315507387988923688}
   m_Layer: 5
   m_Name: Subtitles
   m_TagString: Untagged
@@ -183,37 +182,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462741864175945304}
   m_CullTransparentMesh: 1
---- !u!114 &1315507387988923688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1462741864175945304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ec8629077a038e4eb52594ee5e72953, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ChoiceManager
-  scene_IDs:
-  - 0
-  - 1
-  - 2a
-  - 2b
-  - 3a
-  - 3b
-  - 3c
-  - 4a
-  - 4b
-  - 4c
-  - 4d
-  - x1
-  - x2
-  - x3
-  - x4
-  - x5
-  - x6
-  - XX
 --- !u!1 &3920528605988808575
 GameObject:
   m_ObjectHideFlags: 0
