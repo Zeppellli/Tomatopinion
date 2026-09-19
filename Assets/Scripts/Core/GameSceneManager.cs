@@ -31,7 +31,7 @@ public class GameSceneManager : Singleton<GameSceneManager>
         currentSceneID = startingSceneID;
         currentSceneIndex = Array.IndexOf(ALL_SCENE_IDS, startingSceneID);
 
-        OnSceneUnloaded?.Invoke(currentSceneID);
+        UnloadScene(currentSceneID);
         LoadScene(currentSceneID);
     }
 
@@ -63,6 +63,7 @@ public class GameSceneManager : Singleton<GameSceneManager>
     }
 
     //DEBUG CONTROLS
+#if UNITY_EDITOR
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -74,4 +75,5 @@ public class GameSceneManager : Singleton<GameSceneManager>
             GoToScene(ALL_SCENE_IDS[Mathf.Clamp(currentSceneIndex - 1, 0, ALL_SCENE_IDS.Length)]);
         }
     }
+#endif
 }
