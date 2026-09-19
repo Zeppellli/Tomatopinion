@@ -22,6 +22,8 @@ public class ThrowableTomato : MonoBehaviour
     [SerializeField] private float minimumThrowVelocity = 100;
     [SerializeField] private Transform targetHeight;
     [SerializeField] private float tomatoSpeed;
+    [SerializeField] private float rotationPerFrame;
+    [SerializeField] private float frameRate = 12;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -37,12 +39,14 @@ public class ThrowableTomato : MonoBehaviour
         {
             sendTomatoToTarget();
         }
-        else if (!isThrown){             
-             
+        else{        
             CalculateMouseVelocity();
             if(moveable) MoveTomatoTowardsMouse();
-            
-            
+            if (HasThrowVelocity() && Mouse.current.leftButton.isPressed && !checkIfThrown())
+            {
+                ThrowTomato();
+            }
+
         }
 
         if (transform.position.y == targetPosition.y && lastPosition == transform.position)
