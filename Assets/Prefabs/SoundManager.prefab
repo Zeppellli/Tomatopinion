@@ -54,7 +54,7 @@ MonoBehaviour:
   - voiceName: 7
     audioClip: {fileID: 8300000, guid: 82fad2ff1626413469c307d552ea5a4e, type: 3}
   - voiceName: 6
-    audioClip: {fileID: 8300000, guid: 6bde33427c6eafb4397581a994aea75f, type: 3}
+    audioClip: {fileID: 8300000, guid: a3f0eda241d23e54080de3a5e2f0992b, type: 3}
   - voiceName: 5
     audioClip: {fileID: 8300000, guid: b60a94220da6dc048aa6793aaf7c9775, type: 3}
   musicSource: {fileID: 1768206380766782042}
