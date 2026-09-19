@@ -4,9 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public ThrowableTomato tomato;
-    public TargetSelector targetSelector;
-    private Target chosenTarget;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,11 +12,7 @@ public class GameManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if (tomato.HasThrowVelocity() && Mouse.current.leftButton.isPressed && !tomato.checkIfThrown())
-        {
-            tomato.ThrowTomato();
-        }
+    {        
         if (Mouse.current.rightButton.isPressed)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
