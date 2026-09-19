@@ -554,22 +554,6 @@ PrefabInstance:
       propertyPath: textHolder
       value: 
       objectReference: {fileID: 1066092300}
-    - target: {fileID: 1655273348306900853, guid: 3f2b46e538c8d6b4d9855549c17ff38d, type: 3}
-      propertyPath: all_dialogues.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1655273348306900853, guid: 3f2b46e538c8d6b4d9855549c17ff38d, type: 3}
-      propertyPath: all_dialogues.Array.data[2].id
-      value: 2a
-      objectReference: {fileID: 0}
-    - target: {fileID: 1655273348306900853, guid: 3f2b46e538c8d6b4d9855549c17ff38d, type: 3}
-      propertyPath: all_dialogues.Array.data[1].dialogue
-      value: 
-      objectReference: {fileID: 11400000, guid: b0ee0668c2d58314d9066da14833e7b0, type: 2}
-    - target: {fileID: 1655273348306900853, guid: 3f2b46e538c8d6b4d9855549c17ff38d, type: 3}
-      propertyPath: all_dialogues.Array.data[2].dialogue
-      value: 
-      objectReference: {fileID: 11400000, guid: 47f58665295a9ab45ae2b86f3c3bbc1a, type: 2}
     - target: {fileID: 6596869531272167555, guid: 3f2b46e538c8d6b4d9855549c17ff38d, type: 3}
       propertyPath: m_Name
       value: ==MANAGERS==
