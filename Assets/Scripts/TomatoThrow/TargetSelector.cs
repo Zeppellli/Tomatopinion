@@ -6,6 +6,7 @@ public class TargetSelector : MonoBehaviour
     private Target[] targets;
     private bool isLockedIn = false;
     private bool shouldAim = true;
+    private  float targetsYValue;
     private Target currentTarget;
     public Transform currentTargetTransform;
 
@@ -13,6 +14,7 @@ public class TargetSelector : MonoBehaviour
     void Start()
     {
         targets = GetComponentsInChildren<Target>();
+
         
     }
 
@@ -21,8 +23,6 @@ public class TargetSelector : MonoBehaviour
     {
         if (targets.Length > 0)
         {
-            print(shouldAim);
-            print(isLockedIn);
             if (!isLockedIn && shouldAim)
             {
                 GetNearestTargetToCursor();

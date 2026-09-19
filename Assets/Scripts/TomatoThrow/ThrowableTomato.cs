@@ -1,19 +1,32 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class ThrowableTomato : MonoBehaviour
 {
     private Vector2 mouseVelocity;
     private Vector2 lastMousePosition;
+    private Vector3 lastPosition;
+    private Vector3 targetPositionWithoutLob;
+    private Vector3 lobOffset;
+    [SerializeField] private float upwardsVelocity;
+    [SerializeField] private float gravity;
+    private Vector2 targetPosition;
+    [SerializeField] private float contactMargin = 0.01f;
+    [SerializeField] private float scaleOnLanding = 0.3f;
+    private Vector3 targetAbsoluteScale;
+    [SerializeField] private GameObject Splash;
     private bool isThrown = false;
-    public float minimumThrowVelocity = 100;
-    public Transform targetPositionTransform;
-    public float tomatoSpeed;
+    [SerializeField] private float minimumThrowVelocity = 100;
+    [SerializeField] private Transform targetHeight;
+    [SerializeField] private float tomatoSpeed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        targetPositionWithoutLob = transform.position;
+        targetAbsoluteScale = transform.localScale * scaleOnLanding;
+        Splash.SetActive(false);
     }
 
     // Update is called once per frame
@@ -33,7 +46,15 @@ public class ThrowableTomato : MonoBehaviour
                 MoveTomatoTowardsMouse();
             }
         }
-        
+
+        if (transform.position.y == targetPosition.y && lastPosition == transform.position)
+
+        {
+            Splash.SetActive(true);
+
+        }
+
+        lastPosition = transform.position;
     }
 
     void MoveTomatoTowardsMouse()
@@ -53,12 +74,26 @@ public class ThrowableTomato : MonoBehaviour
     public void ThrowTomato()
     {
         isThrown = true;
+        targetPositionWithoutLob = transform.position;
+        float yValueRaycast = targetHeight.position.y - transform.position.y;
+        float xValueRaycast = (yValueRaycast / mouseVelocity.y) * mouseVelocity.x;
+        Vector2 raycast = new Vector2(xValueRaycast, yValueRaycast);
+        targetPosition = new Vector2(transform.position.x + xValueRaycast, transform.position.y + yValueRaycast);
+        print(targetPosition);
 
     }
     void sendTomatoToTarget()
     {
-       
-        transform.position = Vector2.MoveTowards(transform.position, targetPositionTransform.position, tomatoSpeed * Time.deltaTime);
+        CalculateLobOffset();
+        targetPositionWithoutLob = Vector2.Lerp(targetPositionWithoutLob, targetPosition, tomatoSpeed * Time.deltaTime);
+        transform.localScale = Vector2.Lerp(transform.localScale, targetAbsoluteScale, tomatoSpeed * Time.deltaTime);
+
+        transform.position = targetPositionWithoutLob + lobOffset; 
+
+        if (targetPosition.y - targetPositionWithoutLob.y  < contactMargin) {
+            transform.position = targetPosition;
+            transform.localScale = targetAbsoluteScale;
+        }
     }
 
     void CalculateMouseVelocity()
@@ -68,7 +103,17 @@ public class ThrowableTomato : MonoBehaviour
         Vector2 distanceTraveled = mousePosition - lastMousePosition;
         mouseVelocity = distanceTraveled / Time.deltaTime;
         lastMousePosition = mousePosition;
-        if (mouseVelocity.magnitude > 0) print(mouseVelocity);
     }
 
+    public bool checkIfThrown()
+    {
+        return isThrown;
+    }
+
+    void CalculateLobOffset()
+    {
+
+        lobOffset.y += upwardsVelocity * Time.deltaTime;
+        upwardsVelocity -= gravity * Time.deltaTime;
+    }
 }
