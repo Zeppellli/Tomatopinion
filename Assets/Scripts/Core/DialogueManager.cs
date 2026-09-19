@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System;
 using System.Text.RegularExpressions;
+using System.Globalization;
 
 public class DialogueManager : Singleton<DialogueManager>
 {
@@ -14,6 +15,7 @@ public class DialogueManager : Singleton<DialogueManager>
     [SerializeField] private DialogueLinker[] all_dialogues;
     public static DialogueLinker[] ALL_SCENE_DIALOGUES { get; private set; }
     [SerializeField] private const string DIALOGUEENDING_STRING_MARKER = "//END//";
+    [SerializeField] private static readonly Regex DELAY_MARKER_REGEX = new Regex(@"<(\d+(?:\.\d+)?)>");
 
     [Header("Visual")]
     [SerializeField] private float fadeDuration;
@@ -75,10 +77,11 @@ public class DialogueManager : Singleton<DialogueManager>
 
         DialogueLine currentLine = dialogue.dialogueLinesInOrder[lineIndex];
 
-        textHolder.text = currentLine.line;
+        /*textHolder.text = currentLine.line;
         StartCoroutine(SoundManager.Instance.PlayForDuration(currentLine.voice, currentLine.duration));
 
-        yield return new WaitForSeconds(currentLine.duration);
+        yield return new WaitForSeconds(currentLine.duration);*/
+        yield return StartCoroutine(ShowLineInSequence(currentLine.line, currentLine.duration, sceneID));
 
         textHolder.text = "";
 
@@ -90,6 +93,40 @@ public class DialogueManager : Singleton<DialogueManager>
 
         lineIndex++;
         StartCoroutine(SayLine(dialogue, lineIndex, sceneID));
+    }
+
+    private IEnumerator ShowLineInSequence(string rawLine, float totalDuration, string sceneID)
+    {
+        string[] parts = DELAY_MARKER_REGEX.Split(rawLine);
+        string shown = "";
+        float elapsed = 0f;
+
+        for (int i = 0; i < parts.Length; i++)
+        {
+            if (i % 2 == 0) // TEXT SEGMENT
+            {
+                string segment = parts[i].Trim();
+                if (segment.Length == 0) { continue; }
+
+                shown = shown.Length == 0 ? segment : shown + " " + segment;
+                textHolder.text = shown;
+            }
+            else // DELAY VALUE
+            {
+                float delay = float.Parse(parts[i], CultureInfo.InvariantCulture);
+                yield return new WaitForSeconds(delay);
+                elapsed += delay;
+
+                if (GetLinkerFromID(sceneID).isStopped) { yield break; } //SCENE CUT SHORT MID-LINE
+            }
+        }
+
+        // Hold the fully revealed line for whatever time is left in the line's duration
+        float remaining = totalDuration - elapsed;
+        if (remaining > 0f)
+        {
+            yield return new WaitForSeconds(remaining);
+        }
     }
 
     private DialogueLinker GetLinkerFromID(string id)

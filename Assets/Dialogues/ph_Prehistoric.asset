@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ph_Prehistoric
   m_EditorClassIdentifier: Assembly-CSharp::FullSceneDialogue
   dialogueLinesInOrder:
-  - line: Ughh Hug Ghuuurr
+  - line: Ughh Hug Ghuuurr<1>One<2>Two<0.5>and a Half
     duration: 6
     delayBeforeNextLine: 1
     backgroundFadeAwayOnEnd: 0
