@@ -46,4 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   textHolder: {fileID: 0}
   textBG: {fileID: 0}
+  all_dialogues:
+  - id: 
+    dialogue: {fileID: 0}
+  - id: 1
+    dialogue: {fileID: 11400000, guid: b0ee0668c2d58314d9066da14833e7b0, type: 2}
   fadeDuration: 0.75

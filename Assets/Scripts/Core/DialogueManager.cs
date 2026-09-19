@@ -3,16 +3,88 @@ using Mali.Utils;
 using TMPro;
 using UnityEngine.UI;
 using System.Collections;
+using System;
+using Unity.VectorGraphics;
 
 public class DialogueManager : Singleton<DialogueManager>
 {
     [Header("SetUp")]
     [SerializeField] private TextMeshProUGUI textHolder;
     [SerializeField] private Image textBG;
+    [SerializeField] private DialogueLinker[] all_dialogues;
+    public static DialogueLinker[] ALL_SCENE_DIALOGUES { get; private set; }
 
     [Header("Visual")]
     [SerializeField] private float fadeDuration;
 
+    private void Awake()
+    {
+        base.Awake();
+        ALL_SCENE_DIALOGUES = all_dialogues;
+
+        GameSceneManager.OnSceneLoaded += StartDialogue;
+        GameSceneManager.OnSceneUnloaded += StopDialogue;
+    }
+    private void OnDestroy()
+    {
+        GameSceneManager.OnSceneLoaded -= StartDialogue;
+        GameSceneManager.OnSceneUnloaded -= StopDialogue;
+    }
+
+    private void StartDialogue(string id)
+    {
+        GetLinkerFromID(id).isStopped = false;
+
+        StartCoroutine(SayLine(GetLinkerFromID(id).dialogue, 0, id));
+    }
+    private void StopDialogue(string id)
+    {
+        GetLinkerFromID(id).isStopped = true;
+
+        StartCoroutine(FadeImage(textBG, 0, fadeDuration));
+        textHolder.text = "";
+    }
+
+    private IEnumerator SayLine(FullSceneDialogue dialogue, int lineIndex, string sceneID)
+    {
+        if (GetLinkerFromID(sceneID).isStopped) { yield break; }
+
+        if (lineIndex >= dialogue.dialogueLinesInOrder.Length)
+        {
+            StartCoroutine(FadeImage(textBG, 0, fadeDuration));
+            yield break;
+        }
+
+        yield return StartCoroutine(FadeImage(textBG, 1, fadeDuration));
+
+        DialogueLine currentLine = dialogue.dialogueLinesInOrder[lineIndex];
+
+        textHolder.text = currentLine.line;
+
+        yield return new WaitForSeconds(currentLine.duration);
+
+        textHolder.text = "";
+
+        if (currentLine.backgroundFadeAwayOnEnd)
+        {
+            StartCoroutine(FadeImage(textBG, 0, fadeDuration));
+        }
+        yield return new WaitForSeconds(currentLine.delayBeforeNextLine);
+
+        lineIndex++;
+        StartCoroutine(SayLine(dialogue, lineIndex, sceneID));
+    }
+
+    private DialogueLinker GetLinkerFromID(string id)
+    {
+        foreach (DialogueLinker link in ALL_SCENE_DIALOGUES)
+        {
+            if (link.id == id) { return link; }
+        }
+
+        Debug.LogError($"Couldn't find any linker with the given ID! --> {id}");
+        return null;
+    }
 
     private IEnumerator FadeImage(Image image, float targetAlpha, float duration)
     {
@@ -49,4 +121,12 @@ public class DialogueManager : Singleton<DialogueManager>
         }
     }
 #endif
+}
+
+[Serializable]
+public class DialogueLinker
+{
+    public string id;
+    public FullSceneDialogue dialogue;
+    [HideInInspector] public bool isStopped = false;
 }
