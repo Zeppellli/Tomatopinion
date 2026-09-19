@@ -8,8 +8,9 @@ public class GameSceneManager : Singleton<GameSceneManager>
     [SerializeField] private string[] scene_IDs;
     public static string[] ALL_SCENE_IDS { get; private set; }
 
-    [SerializeField] private string startingScene = "0";
-    private string currentScene;
+    [SerializeField] private string startingSceneID = "0";
+    private string currentSceneID;
+    private int currentSceneIndex; //this one is mostly for debug
 
     public static Action<string> OnSceneLoaded;
     public static Action<string> OnSceneUnloaded;
@@ -27,32 +28,50 @@ public class GameSceneManager : Singleton<GameSceneManager>
 
     private void Initialize()
     {
-        currentScene = startingScene;
-        LoadScene(currentScene);
+        currentSceneID = startingSceneID;
+        currentSceneIndex = Array.IndexOf(ALL_SCENE_IDS, startingSceneID);
+
+        OnSceneUnloaded?.Invoke(currentSceneID);
+        LoadScene(currentSceneID);
     }
 
     public string GetCurrentScene()
     {
-        return currentScene;
+        return currentSceneID;
     }
 
     public void GoToScene(string id)
     {
-        StartCoroutine(UnloadSceneNextFrame(currentScene));
+        UnloadScene(currentSceneID);
 
         LoadScene(id);
     }
 
     private void LoadScene(string id)
     {
-        currentScene = id;
+        currentSceneID = id;
+        currentSceneIndex = Array.IndexOf(ALL_SCENE_IDS, id);
         OnSceneLoaded?.Invoke(id);
-    }
-    
-    private IEnumerator UnloadSceneNextFrame(string id)
-    {
-        yield return null;
 
+        Debug.Log($"LOAD - {id}");
+    }
+
+    private void UnloadScene(string id)
+    {
         OnSceneUnloaded?.Invoke(id);
+        Debug.Log($"UNLOAD - {id}");
+    }
+
+    //DEBUG CONTROLS
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            GoToScene(ALL_SCENE_IDS[Mathf.Clamp(currentSceneIndex + 1, 0, ALL_SCENE_IDS.Length)]);
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            GoToScene(ALL_SCENE_IDS[Mathf.Clamp(currentSceneIndex - 1, 0, ALL_SCENE_IDS.Length)]);
+        }
     }
 }
