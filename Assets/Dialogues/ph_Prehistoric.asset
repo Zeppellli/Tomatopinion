@@ -25,3 +25,7 @@ MonoBehaviour:
     duration: 4
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 1
+  - line: //END// (1)
+    duration: 3
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 1

@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine.UI;
 using System.Collections;
 using System;
-using Unity.VectorGraphics;
+using System.Text.RegularExpressions;
 
 public class DialogueManager : Singleton<DialogueManager>
 {
@@ -13,6 +13,7 @@ public class DialogueManager : Singleton<DialogueManager>
     [SerializeField] private Image textBG;
     [SerializeField] private DialogueLinker[] all_dialogues;
     public static DialogueLinker[] ALL_SCENE_DIALOGUES { get; private set; }
+    [SerializeField] private const string DIALOGUEENDING_STRING_MARKER = "//END//";
 
     [Header("Visual")]
     [SerializeField] private float fadeDuration;
@@ -47,11 +48,23 @@ public class DialogueManager : Singleton<DialogueManager>
 
     private IEnumerator SayLine(FullSceneDialogue dialogue, int lineIndex, string sceneID)
     {
-        if (GetLinkerFromID(sceneID).isStopped) { yield break; }
+        if (GetLinkerFromID(sceneID).isStopped) { yield break; } //EARLY STOP IF SCENE WAS CUT SHORT
 
-        if (lineIndex >= dialogue.dialogueLinesInOrder.Length)
+        if (lineIndex >= dialogue.dialogueLinesInOrder.Length) //RECURSIVE EARLY RETURN
         {
             StartCoroutine(FadeImage(textBG, 0, fadeDuration));
+            yield break;
+        }
+
+        if (dialogue.dialogueLinesInOrder[lineIndex].line.Contains(DIALOGUEENDING_STRING_MARKER)) //GO TO NEXT SCENE 
+        {
+            StartCoroutine(FadeImage(textBG, 0, fadeDuration));
+            
+            yield return new WaitForSeconds(dialogue.dialogueLinesInOrder[lineIndex].duration);
+
+            string foundID = Regex.Match(dialogue.dialogueLinesInOrder[lineIndex].line, @"\((.*?)\)").Groups[1].Value;
+            GameSceneManager.Instance.GoToScene(foundID);
+
             yield break;
         }
 
