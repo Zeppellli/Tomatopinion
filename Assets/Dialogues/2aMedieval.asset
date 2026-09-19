@@ -13,74 +13,64 @@ MonoBehaviour:
   m_Name: 2aMedieval
   m_EditorClassIdentifier: Assembly-CSharp::FullSceneDialogue
   dialogueLinesInOrder:
-  - line: ' I hereby condemn thee to perish by the sacred flame for the following
+  - line: 
+    duration: 0
+    delayBeforeNextLine: 2
+    backgroundFadeAwayOnEnd: 0
+    voice: 0
+  - line: ' I hereby condemn thee to perish by the sacred flame,<1> for the following
       crimes'
     duration: 4
-    delayBeforeNextLine: 0.5
-    backgroundFadeAwayOnEnd: 0
-    voice: 1
-  - line: theft against the church,
-    duration: 2
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 0
-    voice: 1
-  - line: blasphemous life,
-    duration: 1.5
+    voice: 5
+  - line: theft against the church,<2>blasphemous life
+    duration: 4
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 0
-    voice: 1
-  - line: bearing false witness before the Almighty,
-    duration: 2
-    delayBeforeNextLine: 0
-    backgroundFadeAwayOnEnd: 0
-    voice: 1
-  - line: ' heresy'
-    duration: 1
-    delayBeforeNextLine: 0
-    backgroundFadeAwayOnEnd: 0
-    voice: 1
-  - line: ' and deviltry.'
-    duration: 1
+    voice: 5
+  - line: bearing false witness before the Almighty,<2> heresy,<1> and deviltry.
+    duration: 5
     delayBeforeNextLine: 1
     backgroundFadeAwayOnEnd: 1
-    voice: 1
+    voice: 5
   - line: 'May this glorious, purging fire cleanse thy wretched soul of all its sins. '
     duration: 4
     delayBeforeNextLine: 1
     backgroundFadeAwayOnEnd: 1
-    voice: 1
-  - line: Was I to guard your walls on an empty belly? You left your protectors to
-      starve without pay!
+    voice: 5
+  - line: Was I to guard your walls on an empty belly?<3> You left your protectors
+      to starve without pay!
     duration: 6
-    delayBeforeNextLine: 0.5
-    backgroundFadeAwayOnEnd: 1
-    voice: 2
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 6
   - line: I beg thee, show mercy!
     duration: 2
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 1
-    voice: 2
+    voice: 6
   - line: Silence!
     duration: 1
     delayBeforeNextLine: 1
     backgroundFadeAwayOnEnd: 1
-    voice: 1
+    voice: 5
   - line: Thou hast broken the sacred laws of the Almighty.
     duration: 3
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 1
-    voice: 1
+    voice: 5
   - line: "Who art thou to decide how the Lord\u2019s gold is distributed? Thou wretch
       shalt burn for thy sins!"
     duration: 5
     delayBeforeNextLine: 2
     backgroundFadeAwayOnEnd: 1
-    voice: 1
+    voice: 5
   - line: 'Let the holy flames claim thee, and may God have mercy upon thy spirit! '
     duration: 4
     delayBeforeNextLine: 1
     backgroundFadeAwayOnEnd: 1
-    voice: 1
+    voice: 5
   - line: //END// (1)
     duration: 3
     delayBeforeNextLine: 3

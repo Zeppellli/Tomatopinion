@@ -10,6 +10,18 @@ public class SoundManager : Singleton<SoundManager>
         None,
         Caveman_A,
         Caveman_B,
+        Young_Philosopher,
+        Old_Philosopher,
+        Executioner,
+        Dame,
+        Choir,
+        Clergyman,
+        Actor,
+        Laughing_Audience,
+        Revolutionary,
+        ONU_Representative_A,
+        ONU_Representative_B,
+        ONU_Representative_C,
     }
 
     [Header("SetUp")]

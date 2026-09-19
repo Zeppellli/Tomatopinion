@@ -47,8 +47,8 @@ MonoBehaviour:
   textHolder: {fileID: 0}
   textBG: {fileID: 0}
   all_dialogues:
-  - id: 
-    dialogue: {fileID: 0}
+  - id: 0
+    dialogue: {fileID: 11400000, guid: 917e5397de22220409553a69948a6dea, type: 2}
     isStopped: 0
   - id: 1
     dialogue: {fileID: 11400000, guid: b0ee0668c2d58314d9066da14833e7b0, type: 2}
