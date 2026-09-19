@@ -77,10 +77,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
         DialogueLine currentLine = dialogue.dialogueLinesInOrder[lineIndex];
 
-        /*textHolder.text = currentLine.line;
         StartCoroutine(SoundManager.Instance.PlayForDuration(currentLine.voice, currentLine.duration));
-
-        yield return new WaitForSeconds(currentLine.duration);*/
         yield return StartCoroutine(ShowLineInSequence(currentLine.line, currentLine.duration, sceneID));
 
         textHolder.text = "";
