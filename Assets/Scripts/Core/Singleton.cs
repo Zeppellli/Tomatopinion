@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Mali.Utils //STUDIO MOKA ()TM)
+namespace Mali.Utils //STUDIO MOKA (TM)
 {
     public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
