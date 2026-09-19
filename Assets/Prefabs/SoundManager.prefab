@@ -54,9 +54,21 @@ MonoBehaviour:
   - voiceName: 7
     audioClip: {fileID: 8300000, guid: 82fad2ff1626413469c307d552ea5a4e, type: 3}
   - voiceName: 6
-    audioClip: {fileID: 8300000, guid: 6bde33427c6eafb4397581a994aea75f, type: 3}
+    audioClip: {fileID: 8300000, guid: 82fad2ff1626413469c307d552ea5a4e, type: 3}
   - voiceName: 5
-    audioClip: {fileID: 8300000, guid: b60a94220da6dc048aa6793aaf7c9775, type: 3}
+    audioClip: {fileID: 8300000, guid: bf9a680461279224696685b02f4ed4ac, type: 3}
+  - voiceName: 3
+    audioClip: {fileID: 8300000, guid: ebdb42a62604826478ae6488dfa532e6, type: 3}
+  - voiceName: 4
+    audioClip: {fileID: 8300000, guid: 51842c5399ea52b4d8771d9ef55dfedc, type: 3}
+  - voiceName: 8
+    audioClip: {fileID: 8300000, guid: 03dab65eb7c42cf4da3486cff32c1e5d, type: 3}
+  - voiceName: 9
+    audioClip: {fileID: 8300000, guid: dcdf803c32796084ba0f1746a4882cfa, type: 3}
+  - voiceName: 11
+    audioClip: {fileID: 8300000, guid: 08d58b0fc7b9175428908a73ecc9ad32, type: 3}
+  - voiceName: 12
+    audioClip: {fileID: 8300000, guid: 3b7753afa3ff1e347aa2be89f1b9948e, type: 3}
   musicSource: {fileID: 1768206380766782042}
   voiceSource: {fileID: 4522347751368078604}
   fadeInDuration: 0.5
