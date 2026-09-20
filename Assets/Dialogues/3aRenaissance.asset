@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85cd55c6b0955304c90bc3c8ea81e738, type: 3}
+  m_Name: 3aRenaissance
+  m_EditorClassIdentifier: Assembly-CSharp::FullSceneDialogue
+  dialogueLinesInOrder:
+  - line: 
+    duration: 4
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 7
+  - line: ' Citizens of the Faith,<2> our prayers during this dark plague have not
+      gone unheard.'
+    duration: 6
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 8
