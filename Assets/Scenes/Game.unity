@@ -374,6 +374,7 @@ MonoBehaviour:
   isRestartButton: 0
   activatesHats: 0
   activatesBowties: 0
+  doesNothing: 0
 --- !u!114 &1199202125 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6166502032072781740, guid: 84eae32b22a7ff84ba6aeeda46a458f6, type: 3}
@@ -572,6 +573,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7227701177703262773, guid: 84eae32b22a7ff84ba6aeeda46a458f6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7227701177703262773, guid: 84eae32b22a7ff84ba6aeeda46a458f6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7318049313839441170, guid: 84eae32b22a7ff84ba6aeeda46a458f6, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -2326
@@ -648,10 +657,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6825066716205724996, guid: 3f2b46e538c8d6b4d9855549c17ff38d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9143009693158914923, guid: 3f2b46e538c8d6b4d9855549c17ff38d, type: 3}
-      propertyPath: maxVoiceVolume
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
