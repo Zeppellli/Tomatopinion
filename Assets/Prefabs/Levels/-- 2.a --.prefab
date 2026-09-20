@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 9045233255078791630}
   - component: {fileID: 4369649886818680806}
   - component: {fileID: 2407425428412526896}
+  - component: {fileID: 4083096532779579028}
   m_Layer: 5
   m_Name: Victim
   m_TagString: Untagged
@@ -336,8 +337,26 @@ MonoBehaviour:
   targetScene: 3a
   hitArea: {fileID: 8527467405830194535}
   isStartButton: 0
+  isRestartButton: 0
   activatesHats: 0
   activatesBowties: 0
+--- !u!114 &4083096532779579028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3280207689370765687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 839a2a01b8b183943bfac8896385a2b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bobbing
+  linkedToVoice: 6
+  alwaysBop: 0
+  bopHeight: 4
+  bopPerSec: 3
+  easeSpeed: 6
 --- !u!1 &3423151938421050285
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,6 +862,7 @@ GameObject:
   - component: {fileID: 4249066578409468013}
   - component: {fileID: 4535108668747358417}
   - component: {fileID: 4232904843626115169}
+  - component: {fileID: 5768103013790081285}
   m_Layer: 5
   m_Name: Persecutor
   m_TagString: Untagged
@@ -926,8 +946,26 @@ MonoBehaviour:
   targetScene: 3c
   hitArea: {fileID: 3735662114583747717}
   isStartButton: 0
+  isRestartButton: 0
   activatesHats: 0
   activatesBowties: 0
+--- !u!114 &5768103013790081285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8437648476111155201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 839a2a01b8b183943bfac8896385a2b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bobbing
+  linkedToVoice: 5
+  alwaysBop: 0
+  bopHeight: 4
+  bopPerSec: 3
+  easeSpeed: 6
 --- !u!1001 &7939487624679230633
 PrefabInstance:
   m_ObjectHideFlags: 0

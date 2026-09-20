@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 6593882040609802456}
   - component: {fileID: 6888935144121407588}
   - component: {fileID: 8927574055911544677}
+  - component: {fileID: 9058679836002189609}
   m_Layer: 5
   m_Name: Young
   m_TagString: Untagged
@@ -170,8 +171,26 @@ MonoBehaviour:
   targetScene: 2a
   hitArea: {fileID: 4461247035524334253}
   isStartButton: 0
+  isRestartButton: 0
   activatesHats: 0
   activatesBowties: 0
+--- !u!114 &9058679836002189609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471858871014000820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 839a2a01b8b183943bfac8896385a2b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bobbing
+  linkedToVoice: 3
+  alwaysBop: 0
+  bopHeight: 4
+  bopPerSec: 3
+  easeSpeed: 6
 --- !u!1 &2076730869031497572
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,6 +605,7 @@ GameObject:
   - component: {fileID: 2085875765629497723}
   - component: {fileID: 6760332015051179859}
   - component: {fileID: 5795469327320529520}
+  - component: {fileID: 8320032564078063120}
   m_Layer: 5
   m_Name: Old
   m_TagString: Untagged
@@ -669,8 +689,26 @@ MonoBehaviour:
   targetScene: 2b
   hitArea: {fileID: 4077769138175235893}
   isStartButton: 0
+  isRestartButton: 0
   activatesHats: 0
   activatesBowties: 0
+--- !u!114 &8320032564078063120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5543993600620605890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 839a2a01b8b183943bfac8896385a2b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bobbing
+  linkedToVoice: 4
+  alwaysBop: 0
+  bopHeight: 4
+  bopPerSec: 3
+  easeSpeed: 6
 --- !u!1 &5761126946677839031
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7581472899749719604}
   - component: {fileID: 2888443144015681564}
   - component: {fileID: 8330310487219233272}
+  - component: {fileID: 6816748524960116402}
   m_Layer: 5
   m_Name: Clergy+Choir
   m_TagString: Untagged
@@ -96,8 +97,26 @@ MonoBehaviour:
   targetScene: 4b
   hitArea: {fileID: 7810672893617983432}
   isStartButton: 0
+  isRestartButton: 0
   activatesHats: 0
   activatesBowties: 0
+--- !u!114 &6816748524960116402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4122044166456979085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 839a2a01b8b183943bfac8896385a2b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bobbing
+  linkedToVoice: 8
+  alwaysBop: 0
+  bopHeight: 4
+  bopPerSec: 3
+  easeSpeed: 6
 --- !u!1 &4195081016132357112
 GameObject:
   m_ObjectHideFlags: 0
