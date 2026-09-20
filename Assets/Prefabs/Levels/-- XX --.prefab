@@ -834,6 +834,7 @@ MonoBehaviour:
   isRestartButton: 1
   activatesHats: 0
   activatesBowties: 0
+  doesNothing: 0
 --- !u!114 &8190148032588031215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1813,7 +1814,7 @@ MonoBehaviour:
   m_text: 'Verdoyant Ending (3/5)
 
     You did what you could, and it ended like
-    it awlays will.'
+    it always will.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5a7d839173d340b4492c89a5f0e0805d, type: 2}
   m_sharedMaterial: {fileID: -4963828138434586513, guid: 5a7d839173d340b4492c89a5f0e0805d, type: 2}
