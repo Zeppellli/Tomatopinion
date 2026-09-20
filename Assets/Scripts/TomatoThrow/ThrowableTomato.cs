@@ -7,10 +7,13 @@ public class ThrowableTomato : MonoBehaviour
 {
     private Vector2 mouseVelocity;
     private Vector2 lastMousePosition;
+    private Vector3 initialPosition;
+    private Vector3 initialScale;
     private Vector3 lastPosition;
     private Vector3 targetPositionWithoutLob;
     private Vector3 lobOffset;
     [SerializeField] private float upwardsVelocity;
+    private float initialUpwardsVelocity;
     [SerializeField] private float gravity;
     private Vector2 targetPosition;
     [SerializeField] private float contactMargin = 0.01f;
@@ -19,17 +22,19 @@ public class ThrowableTomato : MonoBehaviour
     [SerializeField] private GameObject Splash;
     [SerializeField] private bool moveable;
     private bool isThrown = false;
+    private bool hasLanded = false;
     [SerializeField] private float minimumThrowVelocity = 100;
     [SerializeField] private Transform targetHeight;
+    [SerializeField] private SpriteRenderer tomatoSprite;
     [SerializeField] private float tomatoSpeed;
     [SerializeField] private float rotationPerFrame;
     [SerializeField] private float frameRate = 12;
+    [SerializeField] private float respawnTime = 1;
+    private float respawnCounter = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        targetPositionWithoutLob = transform.position;
-        targetAbsoluteScale = transform.localScale * scaleOnLanding;
-        Splash.SetActive(false);
+        setInitialValues();
     }
 
     // Update is called once per frame
@@ -39,9 +44,9 @@ public class ThrowableTomato : MonoBehaviour
         {
             sendTomatoToTarget();
         }
-        else{        
+        else {
             CalculateMouseVelocity();
-            if(moveable) MoveTomatoTowardsMouse();
+            if (moveable) MoveTomatoTowardsMouse();
             if (HasThrowVelocity() && Mouse.current.leftButton.isPressed && !checkIfThrown())
             {
                 ThrowTomato();
@@ -52,9 +57,15 @@ public class ThrowableTomato : MonoBehaviour
         if (transform.position.y == targetPosition.y && lastPosition == transform.position)
 
         {
-            Splash.SetActive(true);
+            showSplash(true);
+            hasLanded = true;
 
         }
+        if (hasLanded) {
+            respawnCounter += Time.deltaTime;
+            if (respawnCounter >= respawnTime) ResetTomato();
+        }
+
 
         lastPosition = transform.position;
     }
@@ -70,7 +81,7 @@ public class ThrowableTomato : MonoBehaviour
 
     public bool HasThrowVelocity()
     {
-        return (mouseVelocity.magnitude > minimumThrowVelocity && mouseVelocity.y  > 0);
+        return (mouseVelocity.magnitude > minimumThrowVelocity && mouseVelocity.y > 0);
     }
 
     public void ThrowTomato()
@@ -90,9 +101,9 @@ public class ThrowableTomato : MonoBehaviour
         targetPositionWithoutLob = Vector2.Lerp(targetPositionWithoutLob, targetPosition, tomatoSpeed * Time.deltaTime);
         transform.localScale = Vector2.Lerp(transform.localScale, targetAbsoluteScale, tomatoSpeed * Time.deltaTime);
 
-        transform.position = targetPositionWithoutLob + lobOffset; 
+        transform.position = targetPositionWithoutLob + lobOffset;
 
-        if (targetPosition.y - targetPositionWithoutLob.y  < contactMargin) {
+        if (targetPosition.y - targetPositionWithoutLob.y < contactMargin) {
             transform.position = targetPosition;
             transform.localScale = targetAbsoluteScale;
         }
@@ -116,5 +127,32 @@ public class ThrowableTomato : MonoBehaviour
 
         lobOffset.y += upwardsVelocity * Time.deltaTime;
         upwardsVelocity -= gravity * Time.deltaTime;
+    }
+
+    void showSplash(bool shouldShow) { 
+        Splash.SetActive(shouldShow);
+        tomatoSprite.enabled = !shouldShow;
+    }
+
+    void setInitialValues()
+    { 
+        initialPosition = transform.position;
+        initialScale = transform.localScale;
+        initialUpwardsVelocity = upwardsVelocity;
+        targetPositionWithoutLob = transform.position;
+        targetAbsoluteScale = transform.localScale * scaleOnLanding;
+        Splash.SetActive(false);
+    }
+    void ResetTomato()
+    {
+        transform.position = initialPosition;
+        transform.localScale = initialScale;
+        targetPositionWithoutLob = transform.position;
+        upwardsVelocity = initialUpwardsVelocity;
+        lobOffset = Vector2.zero;
+        respawnCounter = 0f;
+        showSplash(false);
+        isThrown = false;
+        hasLanded = false;
     }
 }
