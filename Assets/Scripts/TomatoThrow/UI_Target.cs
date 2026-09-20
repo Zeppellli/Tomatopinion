@@ -44,7 +44,7 @@ public class UI_Target : MonoBehaviour
     
     private void AdditionalEffects()
     {
-        LoadableObject.loadHats = activatesHats;
-        LoadableObject.loadBowties = activatesBowties;
+        if (!LoadableObject.loadHats) { LoadableObject.loadHats = activatesHats; }
+        if (!LoadableObject.loadBowties) { LoadableObject.loadBowties = activatesBowties; }        
     }
 }
