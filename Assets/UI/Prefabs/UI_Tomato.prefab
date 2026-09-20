@@ -31,11 +31,12 @@ RectTransform:
   m_Children:
   - {fileID: 8690256998335829261}
   - {fileID: 8323666302458913614}
+  - {fileID: 5927544086277977348}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 343, y: -94}
+  m_AnchoredPosition: {x: 249, y: -230}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5664935094154608028
@@ -56,18 +57,26 @@ MonoBehaviour:
   grabRadius: 150
   returnSharpness: 12
   swipeWindow: 0.15
-  minimumThrowVelocity: 600
+  minimumThrowVelocity: 80
   minUpwardDirection: 0.2
   distancePerSpeed: 0.1
   minThrowDistance: 50
   maxThrowDistance: 1000
   flightSpeed: 600
   arcHeightPerDistance: 0.2
-  scaleOnLanding: 0.3
-  shrinkDuration: 0.35
+  scaleOnLanding: 0.28
+  shrinkDuration: 0.4
   respawnTime: 1
   rotationPerFrame: 45
   frameRate: 12
+  upwardsVelocity: 650
+  gravity: 1800
+  contactMargin: 0.01
+  moveable: 1
+  targetHeight: {fileID: 5927544086277977348}
+  tomatoSprite: {fileID: 2856286604773039217}
+  tomatoSpeed: 15
+  preparedHeight: 50
 --- !u!1 &2354923562314631681
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,8 +104,8 @@ RectTransform:
   m_GameObject: {fileID: 2354923562314631681}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5964490602519613230}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -218,3 +227,38 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &7977055339786863792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5927544086277977348}
+  m_Layer: 5
+  m_Name: TargetHeight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5927544086277977348
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7977055339786863792}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5964490602519613230}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1875, y: 1470}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
