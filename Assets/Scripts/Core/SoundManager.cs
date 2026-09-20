@@ -57,6 +57,7 @@ public class SoundManager : Singleton<SoundManager>
             voiceSource.time = UnityEngine.Random.Range(0f, maxStart);
         }
 
+        voiceSource.volume = 0; //force silence before fade in
         voiceSource.Play();
         OnVoiceStart?.Invoke(voice);
         Debug.Log($"PLAYING {voice} from {voiceSource.time:F2}s");

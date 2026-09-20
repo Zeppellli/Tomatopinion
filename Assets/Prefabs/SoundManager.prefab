@@ -76,8 +76,8 @@ MonoBehaviour:
   voiceSource: {fileID: 4522347751368078604}
   ambianceSource: {fileID: 1207854914400730093}
   randomizeStartTime: 1
-  fadeInDuration: 0.5
-  fadeOutDuration: 0.5
+  fadeInDuration: 0.25
+  fadeOutDuration: 0.25
   maxVoiceVolume: 1
   maxAmbianceVolume: 0.3
 --- !u!1 &3428642900521027345
@@ -250,7 +250,7 @@ AudioSource:
   m_GameObject: {fileID: 4781797599344273962}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2952026881367053190, guid: 91dd0f799c0e7cd4d9a47a66ee733cd5, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
@@ -379,7 +379,7 @@ AudioSource:
   m_GameObject: {fileID: 7056026911773756947}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8364016863054225813, guid: 91dd0f799c0e7cd4d9a47a66ee733cd5, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
