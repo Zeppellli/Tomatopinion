@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 8796746456991916948}
   - component: {fileID: 4266967789263082940}
   - component: {fileID: 8174213629779087707}
+  - component: {fileID: 3760523333404479870}
   m_Layer: 5
   m_Name: Victim
   m_TagString: Untagged
@@ -352,8 +353,26 @@ MonoBehaviour:
   targetScene: 3b
   hitArea: {fileID: 6458626282826321220}
   isStartButton: 0
+  isRestartButton: 0
   activatesHats: 0
   activatesBowties: 0
+--- !u!114 &3760523333404479870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3032873567136736045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 839a2a01b8b183943bfac8896385a2b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bobbing
+  linkedToVoice: 6
+  alwaysBop: 0
+  bopHeight: 4
+  bopPerSec: 3
+  easeSpeed: 6
 --- !u!1 &4231245626897915038
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,7 +577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadableObject
   listeningToIDs:
-  - 2.b
+  - 2b
   isHat: 0
   isBowtie: 0
 --- !u!114 &2281377487997709196
@@ -843,6 +862,7 @@ GameObject:
   - component: {fileID: 4423936131628587575}
   - component: {fileID: 4142393277239478923}
   - component: {fileID: 6852832260966054219}
+  - component: {fileID: 4946207375305440768}
   m_Layer: 5
   m_Name: Persecutor
   m_TagString: Untagged
@@ -926,8 +946,26 @@ MonoBehaviour:
   targetScene: 3c
   hitArea: {fileID: 5336164812120623156}
   isStartButton: 0
+  isRestartButton: 0
   activatesHats: 0
   activatesBowties: 0
+--- !u!114 &4946207375305440768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8253903390171519579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 839a2a01b8b183943bfac8896385a2b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bobbing
+  linkedToVoice: 5
+  alwaysBop: 0
+  bopHeight: 4
+  bopPerSec: 3
+  easeSpeed: 6
 --- !u!1001 &1298827984391709184
 PrefabInstance:
   m_ObjectHideFlags: 0

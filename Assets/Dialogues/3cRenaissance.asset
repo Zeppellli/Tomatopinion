@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: 3cRenaissance
   m_EditorClassIdentifier: Assembly-CSharp::FullSceneDialogue
   dialogueLinesInOrder:
+  - line: 
+    duration: 2
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 0
   - line: Citizens, we have won !
     duration: 4
     delayBeforeNextLine: 0

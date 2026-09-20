@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 7944379942906769276}
   - component: {fileID: 4410727802093388103}
   - component: {fileID: 2670945644549105970}
+  - component: {fileID: 1545996447167651}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -167,8 +168,26 @@ MonoBehaviour:
   targetScene: 
   hitArea: {fileID: 3999959671598865296}
   isStartButton: 1
+  isRestartButton: 0
   activatesHats: 0
   activatesBowties: 0
+--- !u!114 &1545996447167651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479919178280748159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 839a2a01b8b183943bfac8896385a2b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bobbing
+  linkedToVoice: 0
+  alwaysBop: 1
+  bopHeight: 4
+  bopPerSec: 3
+  easeSpeed: 6
 --- !u!1 &4387590569042561781
 GameObject:
   m_ObjectHideFlags: 0

@@ -95,6 +95,7 @@ MonoBehaviour:
   targetScene: 4b
   hitArea: {fileID: 1220886908797246593}
   isStartButton: 0
+  isRestartButton: 0
   activatesHats: 0
   activatesBowties: 0
 --- !u!1 &680674628554411278
@@ -109,6 +110,7 @@ GameObject:
   - component: {fileID: 6444793782212611511}
   - component: {fileID: 1752888853176220575}
   - component: {fileID: 4310987410200151726}
+  - component: {fileID: 1208833539418223962}
   m_Layer: 5
   m_Name: Pauvre
   m_TagString: Untagged
@@ -192,8 +194,26 @@ MonoBehaviour:
   targetScene: 4a
   hitArea: {fileID: 409293226247725096}
   isStartButton: 0
+  isRestartButton: 0
   activatesHats: 0
   activatesBowties: 0
+--- !u!114 &1208833539418223962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680674628554411278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 839a2a01b8b183943bfac8896385a2b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bobbing
+  linkedToVoice: 9
+  alwaysBop: 0
+  bopHeight: 4
+  bopPerSec: 3
+  easeSpeed: 6
 --- !u!1 &752566603680655483
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,6 +724,7 @@ GameObject:
   - component: {fileID: 2161773992606495764}
   - component: {fileID: 1880375139906053288}
   - component: {fileID: 1587744395333646981}
+  - component: {fileID: 8612170899603599186}
   m_Layer: 5
   m_Name: Bourge
   m_TagString: Untagged
@@ -788,8 +809,26 @@ MonoBehaviour:
   targetScene: 4b
   hitArea: {fileID: 0}
   isStartButton: 0
+  isRestartButton: 0
   activatesHats: 0
   activatesBowties: 0
+--- !u!114 &8612170899603599186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5903958397821187192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 839a2a01b8b183943bfac8896385a2b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bobbing
+  linkedToVoice: 10
+  alwaysBop: 0
+  bopHeight: 4
+  bopPerSec: 3
+  easeSpeed: 6
 --- !u!1 &6230494782263844884
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,7 +1140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadableObject
   listeningToIDs:
-  - 2.b
+  - 3b
   isHat: 0
   isBowtie: 0
 --- !u!114 &2064078546242137634

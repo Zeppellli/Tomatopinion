@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: 4aONU
   m_EditorClassIdentifier: Assembly-CSharp::FullSceneDialogue
   dialogueLinesInOrder:
+  - line: 
+    duration: 2
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 0
   - line: Let's begin. <2> We have been talking about it for a while now, <2> but
       the forecast is now final.
     duration: 7

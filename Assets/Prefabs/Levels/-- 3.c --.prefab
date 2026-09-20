@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 5268292056881923564}
   - component: {fileID: 6420505443843714882}
   - component: {fileID: 4515394808508862331}
+  - component: {fileID: 6700171570815307655}
   m_Layer: 5
   m_Name: Revolt
   m_TagString: Untagged
@@ -353,8 +354,26 @@ MonoBehaviour:
   targetScene: 4c
   hitArea: {fileID: 5374027109681468837}
   isStartButton: 0
+  isRestartButton: 0
   activatesHats: 0
   activatesBowties: 0
+--- !u!114 &6700171570815307655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2668141498727960801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 839a2a01b8b183943bfac8896385a2b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bobbing
+  linkedToVoice: 11
+  alwaysBop: 0
+  bopHeight: 4
+  bopPerSec: 3
+  easeSpeed: 6
 --- !u!1 &3270267084824118842
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,7 +684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadableObject
   listeningToIDs:
-  - 2.b
+  - 3c
   isHat: 0
   isBowtie: 0
 --- !u!114 &6645179715347458164

@@ -35,13 +35,17 @@ public class SoundManager : Singleton<SoundManager>
     [Header("Voice Smoothing")]
     [SerializeField] private float fadeInDuration;
     [SerializeField] private float fadeOutDuration;
-    [SerializeField, Range(0f, 1f)] private float maxVoiceVolume;
-    [SerializeField, Range(0f, 1f)] private float maxAmbianceVolume;
+    [SerializeField, Range(0f, 1f)] private float maxVoiceVolume = 1f;
+    [SerializeField, Range(0f, 1f)] private float maxAmbianceVolume = 1f;
 
     [Header("Shock FX")]
     [SerializeField] private AudioClip[] allShocks;
 
     public static Action<Voices> OnVoiceStart;
+
+    private int voiceToken;
+    private Voices currentVoice = Voices.None;
+    private Coroutine ambianceRoutine;
 
     private void Start()
     {
@@ -50,40 +54,72 @@ public class SoundManager : Singleton<SoundManager>
 
     public IEnumerator PlayForDuration(Voices voice, float duration)
     {
-        AudioClip clip = GetClipFromVoice(voice);
-        voiceSource.clip = clip;
-        voiceSource.volume = 0;
-        voiceSource.loop = true;
-
-        if (randomizeStartTime)
+        if (voice == Voices.None)
         {
-            float maxStart = Mathf.Max(0f, clip.length - duration);
-            voiceSource.time = UnityEngine.Random.Range(0f, maxStart);
+            voiceSource.Stop();
+            yield break;
         }
+        int token = ++voiceToken;
 
-        voiceSource.volume = 0; //force silence before fade in
-        voiceSource.Play();
-        OnVoiceStart?.Invoke(voice);
-        Debug.Log($"PLAYING {voice} from {voiceSource.time:F2}s");
+        AudioClip clip = GetClipFromVoice(voice);
+        if (clip == null) yield break;
+
+        bool alreadyPlaying = voiceSource.isPlaying && currentVoice == voice;
+
+        if (!alreadyPlaying)
+        {
+            voiceSource.Stop();
+            voiceSource.clip = clip;
+            voiceSource.volume = 0f;
+            voiceSource.loop = true;
+
+            if (randomizeStartTime)
+            {
+                float maxStart = Mathf.Max(0f, clip.length - duration);
+                voiceSource.time = UnityEngine.Random.Range(0f, maxStart);
+            }
+
+            voiceSource.Play();
+            currentVoice = voice;
+            OnVoiceStart?.Invoke(voice);
+            Debug.Log($"PLAYING {voice} from {voiceSource.time:F2}s");
+        }
 
         float fadeIn = Mathf.Min(fadeInDuration, duration / 2f);
         float fadeOut = Mathf.Min(fadeOutDuration, duration / 2f);
 
-        yield return StartCoroutine(FadeVolume(voiceSource, 0f, maxVoiceVolume, fadeIn));
+        yield return StartCoroutine(FadeVoice(token, maxVoiceVolume, fadeIn));
+        if (token != voiceToken) yield break;
 
-        yield return new WaitForSeconds(duration - fadeIn - fadeOut);
+        float hold = Mathf.Max(0f, duration - fadeIn - fadeOut);
+        float waited = 0f;
 
-        yield return StartCoroutine(FadeVolume(voiceSource, maxVoiceVolume, 0f, fadeOut));
+        while (waited < hold)
+        {
+            if (token != voiceToken) yield break;
+
+            waited += Time.deltaTime;
+            yield return null;
+        }
+
+        if (token != voiceToken) yield break;
+
+        yield return StartCoroutine(FadeVoice(token, 0f, fadeOut));
+        if (token != voiceToken) yield break;
 
         voiceSource.Stop();
+        currentVoice = Voices.None;
     }
 
     public void EarlyLineStop(bool playShockSound = true)
     {
+        voiceToken++;
+        currentVoice = Voices.None;
+
         voiceSource.Stop();
         voiceSource.volume = maxVoiceVolume;
 
-        if (playShockSound)
+        if (playShockSound && allShocks != null && allShocks.Length > 0)
         {
             voiceSource.PlayOneShot(allShocks[UnityEngine.Random.Range(0, allShocks.Length)]);
         }
@@ -92,21 +128,50 @@ public class SoundManager : Singleton<SoundManager>
     public void StartAmbiance(AudioClip clip)
     {
         Debug.Log($"AMBIANCE - {clip.name}");
-        StartCoroutine(FadeToNewAmbiance(clip));
+
+        if (ambianceRoutine != null) StopCoroutine(ambianceRoutine);
+        ambianceRoutine = StartCoroutine(FadeToNewAmbiance(clip));
     }
+
     private IEnumerator FadeToNewAmbiance(AudioClip clip)
     {
-        yield return StartCoroutine(FadeVolume(voiceSource, maxAmbianceVolume, 0f, 1f)); //out
+        if (ambianceSource.isPlaying)
+        {
+            yield return StartCoroutine(FadeVolume(ambianceSource, 0f, 1f));
+        }
 
         ambianceSource.clip = clip;
+        ambianceSource.volume = 0f;
         ambianceSource.Play();
 
-        yield return StartCoroutine(FadeVolume(voiceSource, 0f, maxAmbianceVolume, 1f)); //in
-    }
-    
+        yield return StartCoroutine(FadeVolume(ambianceSource, maxAmbianceVolume, 1f));
 
-    private IEnumerator FadeVolume(AudioSource source, float from, float to, float time)
+        ambianceRoutine = null;
+    }
+
+    private IEnumerator FadeVoice(int token, float to, float time)
     {
+        float from = voiceSource.volume;
+        float elapsed = 0f;
+
+        while (elapsed < time)
+        {
+            if (token != voiceToken) yield break;
+
+            elapsed += Time.deltaTime;
+            voiceSource.volume = Mathf.Lerp(from, to, elapsed / time);
+            yield return null;
+        }
+
+        if (token == voiceToken)
+        {
+            voiceSource.volume = to;
+        }
+    }
+
+    private IEnumerator FadeVolume(AudioSource source, float to, float time)
+    {
+        float from = source.volume;
         float elapsed = 0f;
 
         while (elapsed < time)
@@ -121,6 +186,8 @@ public class SoundManager : Singleton<SoundManager>
 
     private AudioClip GetClipFromVoice(Voices voice)
     {
+        if (voice == Voices.None) { return null; }
+
         foreach (VoiceLinker link in all_voices)
         {
             if (link.voiceName == voice) { return link.audioClip; }

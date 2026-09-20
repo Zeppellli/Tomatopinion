@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: 4bONU
   m_EditorClassIdentifier: Assembly-CSharp::FullSceneDialogue
   dialogueLinesInOrder:
+  - line: 
+    duration: 2
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 0
   - line: All our models are predicting a lack of all global resources within the
       next fifty years.
     duration: 6

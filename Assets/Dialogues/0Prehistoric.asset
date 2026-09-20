@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: 0Prehistoric
   m_EditorClassIdentifier: Assembly-CSharp::FullSceneDialogue
   dialogueLinesInOrder:
+  - line: 
+    duration: 2
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 0
   - line: "They\u2019re still fighting about fashion\u2026<2> how about you throw
       something on the one with the worst taste?"
     duration: 6
