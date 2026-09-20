@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using UnityEngine.WSA;
 
 public class ThrowableTomato : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class ThrowableTomato : MonoBehaviour
     [SerializeField] private bool moveable;
     private bool isThrown = false;
     private bool hasLanded = false;
+    private bool isPrepared = false;
     [SerializeField] private float minimumThrowVelocity = 100;
     [SerializeField] private Transform targetHeight;
     [SerializeField] private SpriteRenderer tomatoSprite;
@@ -32,6 +34,7 @@ public class ThrowableTomato : MonoBehaviour
     [SerializeField] private float frameRate = 12;
     private float spinCounter = 0;
     [SerializeField] private float respawnTime = 1;
+    [SerializeField] private float preparedHeight = 5;
     private float respawnCounter = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -48,8 +51,9 @@ public class ThrowableTomato : MonoBehaviour
         }
         else {
             CalculateMouseVelocity();
-            if (moveable) MoveTomatoTowardsMouse();
-            if (HasThrowVelocity() && Mouse.current.leftButton.isPressed && !checkIfThrown())
+            PrepareTomatoForThrow();
+            if (moveable && !isPrepared) MoveTomatoTowardsMouse();
+            if (HasThrowVelocity() && isPrepared && !checkIfThrown())
             {
                 ThrowTomato();
             }
@@ -89,6 +93,11 @@ public class ThrowableTomato : MonoBehaviour
     public void ThrowTomato()
     {
         isThrown = true;
+
+        Vector3 newPosition = transform.position;
+        newPosition.y = initialPosition.y;
+        transform.position = newPosition;
+
         targetPositionWithoutLob = transform.position;
         float yValueRaycast = targetHeight.position.y - transform.position.y;
         float xValueRaycast = (yValueRaycast / mouseVelocity.y) * mouseVelocity.x;
@@ -157,6 +166,7 @@ public class ThrowableTomato : MonoBehaviour
         showSplash(false);
         isThrown = false;
         hasLanded = false;
+        isPrepared = false;
     }
 
     void SpinTomato()
@@ -171,5 +181,20 @@ public class ThrowableTomato : MonoBehaviour
                 print("HI");
             }
         }
+    }
+
+    void PrepareTomatoForThrow()
+    {
+        Vector3 preparedPosition = transform.position;
+        if (isPrepared = Mouse.current.leftButton.isPressed && !isThrown)
+        {
+            preparedPosition.y = initialPosition.y + preparedHeight;
+        }
+        else {
+            preparedPosition.y = initialPosition.y;
+        }
+
+        transform.position = Vector3.MoveTowards(transform.position, preparedPosition, 0.5f * Vector3.Distance(transform.position, preparedPosition));
+
     }
 }
