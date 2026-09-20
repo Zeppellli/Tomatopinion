@@ -69,6 +69,6 @@ MonoBehaviour:
     voice: 5
   - line: //END// (3b)
     duration: 3
-    delayBeforeNextLine: 3
+    delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 1
     voice: 0
