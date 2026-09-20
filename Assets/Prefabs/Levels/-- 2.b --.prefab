@@ -577,7 +577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadableObject
   listeningToIDs:
-  - 2.b
+  - 2b
   isHat: 0
   isBowtie: 0
 --- !u!114 &2281377487997709196

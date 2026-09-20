@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: 2aMedieval
   m_EditorClassIdentifier: Assembly-CSharp::FullSceneDialogue
   dialogueLinesInOrder:
+  - line: 
+    duration: 2
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 0
   - line: ' I hereby condemn thee to perish by the sacred flame,<1> for the following
       crimes'
     duration: 4
