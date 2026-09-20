@@ -77,4 +77,19 @@ MonoBehaviour:
   - id: 4c
     dialogue: {fileID: 11400000, guid: e81790704bddaff4ca4eb8dba8022a4f, type: 2}
     isStopped: 0
+  - id: x1
+    dialogue: {fileID: 11400000, guid: 760d05b989040f3448f93ed17b64b36b, type: 2}
+    isStopped: 0
+  - id: x2
+    dialogue: {fileID: 11400000, guid: 760d05b989040f3448f93ed17b64b36b, type: 2}
+    isStopped: 0
+  - id: x3
+    dialogue: {fileID: 11400000, guid: 760d05b989040f3448f93ed17b64b36b, type: 2}
+    isStopped: 0
+  - id: x4
+    dialogue: {fileID: 11400000, guid: 760d05b989040f3448f93ed17b64b36b, type: 2}
+    isStopped: 0
+  - id: x5
+    dialogue: {fileID: 11400000, guid: 760d05b989040f3448f93ed17b64b36b, type: 2}
+    isStopped: 0
   fadeDuration: 0.75
