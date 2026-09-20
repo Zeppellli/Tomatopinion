@@ -15,6 +15,9 @@ public class GameSceneManager : Singleton<GameSceneManager>
     public static Action<string> OnSceneLoaded;
     public static Action<string> OnSceneUnloaded;
 
+    private string idToLoad;
+    public static Action OnCurtainCover;
+
     private void Awake()
     {
         base.Awake();
@@ -42,9 +45,15 @@ public class GameSceneManager : Singleton<GameSceneManager>
 
     public void GoToScene(string id)
     {
-        UnloadScene(currentSceneID);
+        CurtainAnimator.Instance.PlayCurtainAnim();
+        OnCurtainCover += DoTheLoad;
+        idToLoad = id;
+    }
 
-        LoadScene(id);
+    private void DoTheLoad()
+    {
+        UnloadScene(currentSceneID);
+        LoadScene(idToLoad);
     }
 
     private void LoadScene(string id)

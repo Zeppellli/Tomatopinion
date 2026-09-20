@@ -10,37 +10,37 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85cd55c6b0955304c90bc3c8ea81e738, type: 3}
-  m_Name: ph_Prehistoric
+  m_Name: 0Prehistoric
   m_EditorClassIdentifier: Assembly-CSharp::FullSceneDialogue
   dialogueLinesInOrder:
   - line: Kurr thinks he look good.
     duration: 4
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 0
-    voice: 1
+    voice: 2
   - line: Dugg thinks Kurr looks bad, <3>and that Dugg looks much better because
       superior intellect and sense of style.
     duration: 6
     delayBeforeNextLine: 0.5
     backgroundFadeAwayOnEnd: 0
-    voice: 2
+    voice: 1
   - line: Kurr thinks Dugg stupid and jealous of Kurr. <3> Dugg should accept hats
       are better than scarfs.
     duration: 6
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 0
-    voice: 1
+    voice: 2
   - line: Dugg likes scarfs, <2> and anyone who thinks not like Dugg is stupid, <4>
       just like Kurr.
     duration: 5
     delayBeforeNextLine: 0.5
     backgroundFadeAwayOnEnd: 0
-    voice: 2
+    voice: 1
   - line: Kurr is going to hit Dugg if Dugg continues to have no taste.
     duration: 6
     delayBeforeNextLine: 0.5
     backgroundFadeAwayOnEnd: 1
-    voice: 1
+    voice: 2
   - line: //END// (1)
     duration: 2
     delayBeforeNextLine: 0

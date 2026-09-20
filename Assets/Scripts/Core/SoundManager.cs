@@ -74,6 +74,7 @@ public class SoundManager : Singleton<SoundManager>
 
     public void StartAmbiance(AudioClip clip)
     {
+        Debug.Log($"AMBIANCE - {clip.name}");
         StartCoroutine(FadeToNewAmbiance(clip));
     }
     private IEnumerator FadeToNewAmbiance(AudioClip clip)

@@ -32,6 +32,11 @@ public class LoadableObject : MonoBehaviour
         if (!listeningToIDs.Contains(id)) { return; }
 
         gameObject.SetActive(true);
+        PlaySoundOnEnable soundComp;
+        if (soundComp = gameObject.GetComponent<PlaySoundOnEnable>())
+        {
+            soundComp.PlaySound();
+        }
     }
     
     private void UnloadSelf(string id)

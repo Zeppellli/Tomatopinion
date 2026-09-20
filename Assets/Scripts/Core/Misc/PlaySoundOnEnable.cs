@@ -4,7 +4,7 @@ public class PlaySoundOnEnable : MonoBehaviour
 {
     [SerializeField] private AudioClip clip;
 
-    private void OnEnable()
+    public void PlaySound()
     {
         SoundManager.Instance.StartAmbiance(clip);
     }
