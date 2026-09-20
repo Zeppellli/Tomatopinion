@@ -5,9 +5,11 @@ public class Target : MonoBehaviour
 {
     private SpriteRenderer sprite;
     [SerializeField] private string targetScene;
+    private GameSceneManager gameSceneManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        gameSceneManager = GameSceneManager.Instance;
         sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
@@ -19,7 +21,6 @@ public class Target : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        print("yo");
-        SceneManager.LoadScene(targetScene);
+        gameSceneManager.GoToScene(targetScene);
     }
 }
