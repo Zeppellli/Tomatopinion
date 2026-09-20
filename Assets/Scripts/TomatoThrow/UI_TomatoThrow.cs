@@ -12,6 +12,9 @@ public class UI_ThrowableTomato : MonoBehaviour
     [Header("References")]
     [SerializeField] private Image tomatoImage;
     [SerializeField] private GameObject Splash;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip throwClip;
+    [SerializeField] private AudioClip[] allSplashClips;
 
     [Header("Grab")]
     [SerializeField] private bool requireGrab = true;
@@ -153,6 +156,7 @@ public class UI_ThrowableTomato : MonoBehaviour
         Vector2 raycast = new Vector2(xValueRaycast, yValueRaycast);
         targetPosition = new Vector2(transform.position.x + xValueRaycast, transform.position.y + yValueRaycast);
 
+        audioSource.PlayOneShot(throwClip);
     }
     void sendTomatoToTarget()
     {
@@ -193,6 +197,10 @@ public class UI_ThrowableTomato : MonoBehaviour
     {
         Splash.SetActive(shouldShow);
         tomatoSprite.enabled = !shouldShow;
+        if (shouldShow)
+        {
+            audioSource.PlayOneShot(allSplashClips[Random.Range(0, allSplashClips.Length)]);
+        }
     }
 
     void setInitialValues()
