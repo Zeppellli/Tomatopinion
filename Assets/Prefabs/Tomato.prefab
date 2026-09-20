@@ -370,13 +370,13 @@ MonoBehaviour:
   upwardsVelocity: 4.6
   gravity: 9.8
   contactMargin: 0.05
-  scaleOnLanding: 0.35
+  scaleOnLanding: 0.3
   Splash: {fileID: 669545984713876114}
   moveable: 0
   minimumThrowVelocity: 50
   targetHeight: {fileID: 3128278991535260160}
   tomatoSprite: {fileID: 7696452444808432622}
   tomatoSpeed: 5
-  rotationPerFrame: 0
+  rotationPerFrame: 45
   frameRate: 12
   respawnTime: 1

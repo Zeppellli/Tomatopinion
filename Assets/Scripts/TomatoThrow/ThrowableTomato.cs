@@ -28,7 +28,9 @@ public class ThrowableTomato : MonoBehaviour
     [SerializeField] private SpriteRenderer tomatoSprite;
     [SerializeField] private float tomatoSpeed;
     [SerializeField] private float rotationPerFrame;
+    private float rotation;
     [SerializeField] private float frameRate = 12;
+    private float spinCounter = 0;
     [SerializeField] private float respawnTime = 1;
     private float respawnCounter = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -66,7 +68,7 @@ public class ThrowableTomato : MonoBehaviour
             if (respawnCounter >= respawnTime) ResetTomato();
         }
 
-
+        SpinTomato();
         lastPosition = transform.position;
     }
 
@@ -146,6 +148,7 @@ public class ThrowableTomato : MonoBehaviour
     void ResetTomato()
     {
         transform.position = initialPosition;
+        tomatoSprite.transform.rotation = Quaternion.identity;
         transform.localScale = initialScale;
         targetPositionWithoutLob = transform.position;
         upwardsVelocity = initialUpwardsVelocity;
@@ -154,5 +157,19 @@ public class ThrowableTomato : MonoBehaviour
         showSplash(false);
         isThrown = false;
         hasLanded = false;
+    }
+
+    void SpinTomato()
+    {
+        if (isThrown) { 
+        
+            spinCounter += Time.deltaTime;
+            if (spinCounter >= 1 / frameRate) {
+                rotation += rotationPerFrame;
+                tomatoSprite.transform.rotation = Quaternion.Euler(0f,0f,rotation);
+                spinCounter = 0f;
+                print("HI");
+            }
+        }
     }
 }
