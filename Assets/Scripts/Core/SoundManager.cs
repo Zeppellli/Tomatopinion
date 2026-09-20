@@ -28,12 +28,14 @@ public class SoundManager : Singleton<SoundManager>
     [SerializeField] private VoiceLinker[] all_voices;
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource voiceSource;
+    [SerializeField] private AudioSource ambianceSource;
     [SerializeField] private bool randomizeStartTime;
 
     [Header("Voice Smoothing")]
     [SerializeField] private float fadeInDuration;
     [SerializeField] private float fadeOutDuration;
-    [SerializeField, Range(0f, 1f)] private float maxVolume;
+    [SerializeField, Range(0f, 1f)] private float maxVoiceVolume;
+    [SerializeField, Range(0f, 1f)] private float maxAmbianceVolume;
 
 
     private void Start()
@@ -52,34 +54,49 @@ public class SoundManager : Singleton<SoundManager>
             float maxStart = Mathf.Max(0f, clip.length - duration);
             voiceSource.time = UnityEngine.Random.Range(0f, maxStart);
         }
-        
+
         voiceSource.Play();
         Debug.Log($"PLAYING {voice} from {voiceSource.time:F2}s");
 
         float fadeIn = Mathf.Min(fadeInDuration, duration / 2f);
         float fadeOut = Mathf.Min(fadeOutDuration, duration / 2f);
 
-        yield return StartCoroutine(FadeVolume(0f, maxVolume, fadeIn));
+        yield return StartCoroutine(FadeVolume(voiceSource, 0f, maxVoiceVolume, fadeIn));
 
         yield return new WaitForSeconds(duration - fadeIn - fadeOut);
 
-        yield return StartCoroutine(FadeVolume(maxVolume, 0f, fadeOut));
+        yield return StartCoroutine(FadeVolume(voiceSource, maxVoiceVolume, 0f, fadeOut));
 
         voiceSource.Stop();
     }
 
-    private IEnumerator FadeVolume(float from, float to, float time)
+    public void StartAmbiance(AudioClip clip)
+    {
+        StartCoroutine(FadeToNewAmbiance(clip));
+    }
+    private IEnumerator FadeToNewAmbiance(AudioClip clip)
+    {
+        yield return StartCoroutine(FadeVolume(voiceSource, maxAmbianceVolume, 0f, 1f)); //out
+
+        ambianceSource.clip = clip;
+        ambianceSource.Play();
+
+        yield return StartCoroutine(FadeVolume(voiceSource, 0f, maxAmbianceVolume, 1f)); //in
+    }
+    
+
+    private IEnumerator FadeVolume(AudioSource source, float from, float to, float time)
     {
         float elapsed = 0f;
 
         while (elapsed < time)
         {
             elapsed += Time.deltaTime;
-            voiceSource.volume = Mathf.Lerp(from, to, elapsed / time);
+            source.volume = Mathf.Lerp(from, to, elapsed / time);
             yield return null;
         }
 
-        voiceSource.volume = to;
+        source.volume = to;
     }
 
     private AudioClip GetClipFromVoice(Voices voice)

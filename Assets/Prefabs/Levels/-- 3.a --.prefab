@@ -344,6 +344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4119912871453222302}
   - component: {fileID: 8043571095463737084}
+  - component: {fileID: 3498706519837120427}
   m_Layer: 5
   m_Name: -- 3.a --
   m_TagString: Untagged
@@ -390,6 +391,19 @@ MonoBehaviour:
   - 2.b
   isHat: 0
   isBowtie: 0
+--- !u!114 &3498706519837120427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6635833495101510168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e143afce0427b4192c76ea9cbed344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlaySoundOnEnable
+  clip: {fileID: 8300000, guid: 47c1757f23e2e244ea21d7aad7a40ba5, type: 3}
 --- !u!1 &6655978995744818201
 GameObject:
   m_ObjectHideFlags: 0
