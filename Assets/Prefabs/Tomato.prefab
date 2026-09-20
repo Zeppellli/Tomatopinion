@@ -375,4 +375,8 @@ MonoBehaviour:
   moveable: 0
   minimumThrowVelocity: 50
   targetHeight: {fileID: 3128278991535260160}
+  tomatoSprite: {fileID: 7696452444808432622}
   tomatoSpeed: 5
+  rotationPerFrame: 0
+  frameRate: 12
+  respawnTime: 1
