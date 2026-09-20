@@ -70,6 +70,10 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 08d58b0fc7b9175428908a73ecc9ad32, type: 3}
   - voiceName: 12
     audioClip: {fileID: 8300000, guid: 3b7753afa3ff1e347aa2be89f1b9948e, type: 3}
+  - voiceName: 13
+    audioClip: {fileID: 8300000, guid: 56f25420aa0b57447ae53bf412a937e4, type: 3}
+  - voiceName: 14
+    audioClip: {fileID: 8300000, guid: 4ac3713de7b106a4b881576af5a19bbd, type: 3}
   - voiceName: 15
     audioClip: {fileID: 8300000, guid: 775cd37126f54364cbec6793bb058e5a, type: 3}
   musicSource: {fileID: 1768206380766782042}
