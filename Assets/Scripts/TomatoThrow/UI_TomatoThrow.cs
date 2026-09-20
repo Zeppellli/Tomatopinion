@@ -1,55 +1,60 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using System.Collections.Generic;
 
 public class UI_ThrowableTomato : MonoBehaviour
 {
+    private enum State { Idle, Held, Flying, Shrinking, Respawning }
+
     [Header("References")]
-    //[SerializeField] private RectTransform targetHeight;
     [SerializeField] private Image tomatoImage;
     [SerializeField] private GameObject Splash;
 
-    [Header("Throw")]
-    [SerializeField] private float distancePerSpeed = .3f;
-    [SerializeField] private float minThrowDistance = 100f;
-    [SerializeField] private float maxThrowDistance = 800f;
-    [SerializeField] private bool moveable;
-    [SerializeField] private float minimumThrowVelocity = 1000;
-    [SerializeField] private float preparedHeight = 50;
-    [SerializeField] private float tomatoSpeed;
-    [SerializeField] private float upwardsVelocity;
-    [SerializeField] private float gravity;
-    [SerializeField] private float contactMargin = 1f;
-    [SerializeField] private float scaleOnLanding = 0.3f;
-    [SerializeField] private float missShrinkSpeed = 5f;
-    private bool isMissed;
-    [SerializeField] private float swipeWindow = 0.15f;
-    private readonly List<(Vector2 pos, float time)> mouseSamples = new List<(Vector2, float)>();
+    [Header("Grab")]
+    [SerializeField] private bool requireGrab = true;
+    [SerializeField] private float grabRadius = 150f;
+    [SerializeField] private float returnSharpness = 12f;
 
-    [Header("Spin / Respawn")]
+    [Header("Swipe")]
+    [SerializeField] private float swipeWindow = 0.1f;
+    [SerializeField] private float minimumThrowVelocity = 800f;
+    [SerializeField] private float minUpwardDirection = 0.2f;
+
+    [Header("Flight")]
+    [SerializeField] private float distancePerSpeed = 0.35f;
+    [SerializeField] private float minThrowDistance = 150f;
+    [SerializeField] private float maxThrowDistance = 900f;
+    [SerializeField] private float flightSpeed = 1200f;
+    [SerializeField] private float arcHeightPerDistance = 0.2f;
+    [SerializeField] private float scaleOnLanding = 0.3f;
+
+    [Header("Landing")]
+    [SerializeField] private float shrinkDuration = 0.35f;
+    [SerializeField] private float respawnTime = 1f;
+
+    [Header("Spin")]
     [SerializeField] private float rotationPerFrame;
-    [SerializeField] private float frameRate = 12;
-    [SerializeField] private float respawnTime = 1;
+    [SerializeField] private float frameRate = 12f;
 
     private RectTransform rect;
     private RectTransform parentRect;
     private Camera uiCamera;
 
-    private Vector2 mouseVelocity;
+    private State state = State.Idle;
+    private readonly List<(Vector2 pos, float time)> samples = new List<(Vector2, float)>();
+    private Vector2 grabOffset;
     private Vector2 initialPosition;
-    private Vector2 targetPosition;
-    private Vector2 targetPositionWithoutLob;
-    private Vector2 lobOffset;
     private Vector3 initialScale;
-    private Vector3 targetAbsoluteScale;
-    private float initialUpwardsVelocity;
+    private Vector3 landingScale;
+    private Vector2 flightStart;
+    private Vector2 flightEnd;
+    private float flightDuration;
+    private float flightTimer;
+    private float arcHeight;
+    private float stateTimer;
     private float rotation;
     private float spinCounter;
-    private float respawnCounter;
-    private bool isThrown;
-    private bool hasLanded;
-    private bool isPrepared;
 
     private Vector2 Pos
     {
@@ -67,112 +72,143 @@ public class UI_ThrowableTomato : MonoBehaviour
 
     void Start()
     {
-        SetInitialValues();
+        initialPosition = Pos;
+        initialScale = rect.localScale;
+        landingScale = initialScale * scaleOnLanding;
+        Splash.SetActive(false);
     }
 
     void Update()
     {
-        if (isThrown)
+        switch (state)
         {
-            SendTomatoToTarget();
-        }
-        else
-        {
-            CalculateMouseVelocity();
-            PrepareTomatoForThrow();
-            if (moveable && !isPrepared) MoveTomatoTowardsMouse();
-            if (isPrepared && HasThrowVelocity()) ThrowTomato();
-        }
-
-        if (hasLanded)
-        {
-            respawnCounter += Time.deltaTime;
-            if (respawnCounter >= respawnTime) ResetTomato();
+            case State.Idle: UpdateIdle(); break;
+            case State.Held: UpdateHeld(); break;
+            case State.Flying: UpdateFlying(); break;
+            case State.Shrinking: UpdateShrinking(); break;
+            case State.Respawning: UpdateRespawning(); break;
         }
 
         SpinTomato();
     }
 
-    Vector2 GetMouseLocalPosition()
+    Vector2 ScreenToLocal(Vector2 screenPosition)
     {
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            parentRect, Mouse.current.position.ReadValue(), uiCamera, out Vector2 local);
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(parentRect, screenPosition, uiCamera, out Vector2 local);
         return local;
     }
 
-    void MoveTomatoTowardsMouse()
+    void UpdateIdle()
     {
-        Vector2 p = Pos;
-        p.x = GetMouseLocalPosition().x;
-        Pos = p;
-    }
+        Pos = Vector2.Lerp(Pos, initialPosition, 1f - Mathf.Exp(-returnSharpness * Time.deltaTime));
 
-    public bool HasThrowVelocity()
-    {
-        return mouseVelocity.magnitude > minimumThrowVelocity && mouseVelocity.y > 0;
-    }
+        Pointer pointer = Pointer.current;
+        if (pointer == null || !pointer.press.wasPressedThisFrame) return;
 
-    public void ThrowTomato()
-    {
-        isThrown = true;
+        Vector2 screenPosition = pointer.position.ReadValue();
 
-        Vector2 p = Pos;
-        p.y = initialPosition.y;
-        Pos = p;
-
-        targetPositionWithoutLob = p;
-        float distance = Mathf.Clamp(mouseVelocity.magnitude * distancePerSpeed, minThrowDistance, maxThrowDistance);
-        targetPosition = p + mouseVelocity.normalized * distance;
-    }
-
-    void SendTomatoToTarget()
-    {
-        if (hasLanded) return;
-
-        if (isMissed)
+        if (requireGrab)
         {
-            ShrinkAway();
+            Vector2 tomatoScreen = RectTransformUtility.WorldToScreenPoint(uiCamera, rect.position);
+            if (Vector2.Distance(screenPosition, tomatoScreen) > grabRadius) return;
+        }
+
+        Vector2 local = ScreenToLocal(screenPosition);
+        grabOffset = requireGrab ? Pos - local : Vector2.zero;
+        samples.Clear();
+        AddSample(local);
+        state = State.Held;
+    }
+
+    void UpdateHeld()
+    {
+        Pointer pointer = Pointer.current;
+        if (pointer == null)
+        {
+            state = State.Idle;
             return;
         }
 
-        CalculateLobOffset();
-        targetPositionWithoutLob = Vector2.Lerp(targetPositionWithoutLob, targetPosition, tomatoSpeed * Time.deltaTime);
-        rect.localScale = Vector3.Lerp(rect.localScale, targetAbsoluteScale, tomatoSpeed * Time.deltaTime);
-        Pos = targetPositionWithoutLob + lobOffset;
+        Vector2 local = ScreenToLocal(pointer.position.ReadValue());
+        AddSample(local);
+        Pos = local + grabOffset;
 
-        if (Vector2.Distance(targetPositionWithoutLob, targetPosition) < contactMargin)
+        if (!pointer.press.isPressed) Release();
+    }
+
+    void AddSample(Vector2 local)
+    {
+        samples.Add((local, Time.time));
+        while (samples.Count > 1 && Time.time - samples[0].time > swipeWindow)
         {
-            Land();
+            samples.RemoveAt(0);
         }
     }
 
-    void ShrinkAway()
+    Vector2 GetSwipeVelocity()
     {
-        rect.localScale = Vector3.Lerp(rect.localScale, Vector3.zero, missShrinkSpeed * Time.deltaTime);
+        if (samples.Count < 2) return Vector2.zero;
 
-        if (rect.localScale.x <= initialScale.x * 0.01f)
+        var first = samples[0];
+        var last = samples[samples.Count - 1];
+        float elapsed = last.time - first.time;
+        return elapsed > 0f ? (last.pos - first.pos) / elapsed : Vector2.zero;
+    }
+
+    void Release()
+    {
+        Vector2 velocity = GetSwipeVelocity();
+        float speed = velocity.magnitude;
+
+        if (speed >= minimumThrowVelocity && velocity.y / speed >= minUpwardDirection)
         {
-            rect.localScale = Vector3.zero;
-            tomatoImage.enabled = false;
-            hasLanded = true;
+            Throw(velocity / speed, speed);
         }
+        else
+        {
+            state = State.Idle;
+        }
+    }
+
+    void Throw(Vector2 direction, float speed)
+    {
+        float distance = Mathf.Clamp(speed * distancePerSpeed, minThrowDistance, maxThrowDistance);
+
+        flightStart = Pos;
+        flightEnd = flightStart + direction * distance;
+        flightDuration = Mathf.Max(0.05f, distance / flightSpeed);
+        arcHeight = distance * arcHeightPerDistance;
+        flightTimer = 0f;
+        state = State.Flying;
+    }
+
+    void UpdateFlying()
+    {
+        flightTimer += Time.deltaTime;
+        float t = Mathf.Clamp01(flightTimer / flightDuration);
+
+        Vector2 position = Vector2.Lerp(flightStart, flightEnd, t);
+        position.y += arcHeight * 4f * t * (1f - t);
+        Pos = position;
+        rect.localScale = Vector3.Lerp(initialScale, landingScale, t);
+
+        if (t >= 1f) Land();
     }
 
     void Land()
     {
-        Pos = targetPosition;
-        rect.localScale = targetAbsoluteScale;
-
+        stateTimer = 0f;
         UI_Target hit = GetTargetUnderTomato();
+
         if (hit != null)
         {
-            hasLanded = true;
             ShowSplash(true);
+            state = State.Respawning;
             hit.Hit();
         }
         else
         {
-            isMissed = true;
+            state = State.Shrinking;
         }
     }
 
@@ -186,45 +222,24 @@ public class UI_ThrowableTomato : MonoBehaviour
         return null;
     }
 
-    void CalculateMouseVelocity()
+    void UpdateShrinking()
     {
-        Vector2 mousePosition = GetMouseLocalPosition();
-        mouseSamples.Add((mousePosition, Time.time));
+        stateTimer += Time.deltaTime;
+        float t = Mathf.Clamp01(stateTimer / Mathf.Max(0.01f, shrinkDuration));
+        rect.localScale = Vector3.Lerp(landingScale, Vector3.zero, t);
 
-        while (mouseSamples.Count > 1 && Time.time - mouseSamples[0].time > swipeWindow)
-            mouseSamples.RemoveAt(0);
-
-        Vector2 swipeStart = mouseSamples[0].pos;
-        float elapsed = Time.time - mouseSamples[0].time;
-
-        mouseVelocity = elapsed > 0f ? (mousePosition - swipeStart) / elapsed : Vector2.zero;
+        if (t >= 1f)
+        {
+            tomatoImage.enabled = false;
+            stateTimer = 0f;
+            state = State.Respawning;
+        }
     }
 
-    public bool checkIfThrown()
+    void UpdateRespawning()
     {
-        return isThrown;
-    }
-
-    void CalculateLobOffset()
-    {
-        lobOffset.y += upwardsVelocity * Time.deltaTime;
-        upwardsVelocity -= gravity * Time.deltaTime;
-    }
-
-    void ShowSplash(bool shouldShow)
-    {
-        Splash.SetActive(shouldShow);
-        tomatoImage.enabled = !shouldShow;
-    }
-
-    void SetInitialValues()
-    {
-        initialPosition = Pos;
-        initialScale = rect.localScale;
-        initialUpwardsVelocity = upwardsVelocity;
-        targetPositionWithoutLob = Pos;
-        targetAbsoluteScale = rect.localScale * scaleOnLanding;
-        Splash.SetActive(false);
+        stateTimer += Time.deltaTime;
+        if (stateTimer >= respawnTime) ResetTomato();
     }
 
     void ResetTomato()
@@ -233,20 +248,22 @@ public class UI_ThrowableTomato : MonoBehaviour
         rect.localScale = initialScale;
         tomatoImage.rectTransform.localRotation = Quaternion.identity;
         rotation = 0f;
-        targetPositionWithoutLob = initialPosition;
-        upwardsVelocity = initialUpwardsVelocity;
-        lobOffset = Vector2.zero;
-        respawnCounter = 0f;
+        spinCounter = 0f;
+        stateTimer = 0f;
+        samples.Clear();
         ShowSplash(false);
-        isThrown = false;
-        hasLanded = false;
-        isPrepared = false;
-        isMissed = false;
+        state = State.Idle;
+    }
+
+    void ShowSplash(bool shouldShow)
+    {
+        Splash.SetActive(shouldShow);
+        tomatoImage.enabled = !shouldShow;
     }
 
     void SpinTomato()
     {
-        if (!isThrown) return;
+        if (state != State.Flying) return;
 
         spinCounter += Time.deltaTime;
         if (spinCounter >= 1f / frameRate)
@@ -255,15 +272,5 @@ public class UI_ThrowableTomato : MonoBehaviour
             tomatoImage.rectTransform.localRotation = Quaternion.Euler(0f, 0f, rotation);
             spinCounter = 0f;
         }
-    }
-
-    void PrepareTomatoForThrow()
-    {
-        isPrepared = Mouse.current.leftButton.isPressed && !isThrown;
-
-        Vector2 p = Pos;
-        float goalY = initialPosition.y + (isPrepared ? preparedHeight : 0f);
-        p.y = Mathf.Lerp(p.y, goalY, 0.5f);
-        Pos = p;
     }
 }
