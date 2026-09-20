@@ -25,7 +25,7 @@ MonoBehaviour:
     backgroundFadeAwayOnEnd: 0
     voice: 3
   - line: Because the pleasure you feel is limited. <2> As soon as you stop feeding
-      it, it stops fulfilling you.
+      it, <2>it stops fulfilling you.
     duration: 6
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 0

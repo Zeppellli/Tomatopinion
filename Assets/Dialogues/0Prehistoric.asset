@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: 0Prehistoric
   m_EditorClassIdentifier: Assembly-CSharp::FullSceneDialogue
   dialogueLinesInOrder:
+  - line: "They\u2019re still fighting about fashion\u2026<2> how about you throw
+      something on the one with the worst taste?"
+    duration: 6
+    delayBeforeNextLine: 1
+    backgroundFadeAwayOnEnd: 0
+    voice: 15
   - line: Kurr thinks he look good.
     duration: 4
     delayBeforeNextLine: 0
@@ -20,7 +26,7 @@ MonoBehaviour:
     voice: 2
   - line: Dugg thinks Kurr looks bad, <3>and that Dugg looks much better because
       superior intellect and sense of style.
-    duration: 6
+    duration: 7
     delayBeforeNextLine: 0.5
     backgroundFadeAwayOnEnd: 0
     voice: 1

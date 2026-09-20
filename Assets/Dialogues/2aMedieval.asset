@@ -19,15 +19,11 @@ MonoBehaviour:
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 0
     voice: 5
-  - line: theft against the church,<2>blasphemous life
-    duration: 4
-    delayBeforeNextLine: 0
-    backgroundFadeAwayOnEnd: 0
-    voice: 5
-  - line: bearing false witness before the Almighty,<2> heresy,<1> and deviltry.
-    duration: 5
+  - line: theft against the church,<2>blasphemous life, <1> bearing false witness
+      before the Almighty,<2> heresy,<1> and deviltry.
+    duration: 9
     delayBeforeNextLine: 1
-    backgroundFadeAwayOnEnd: 1
+    backgroundFadeAwayOnEnd: 0
     voice: 5
   - line: 'May this glorious, purging fire cleanse thy wretched soul of all its sins. '
     duration: 4

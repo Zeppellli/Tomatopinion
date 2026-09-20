@@ -55,7 +55,7 @@ MonoBehaviour:
   - voiceName: 7
     audioClip: {fileID: 8300000, guid: 82fad2ff1626413469c307d552ea5a4e, type: 3}
   - voiceName: 6
-    audioClip: {fileID: 8300000, guid: 82fad2ff1626413469c307d552ea5a4e, type: 3}
+    audioClip: {fileID: 8300000, guid: a3f0eda241d23e54080de3a5e2f0992b, type: 3}
   - voiceName: 5
     audioClip: {fileID: 8300000, guid: bf9a680461279224696685b02f4ed4ac, type: 3}
   - voiceName: 3
@@ -70,6 +70,8 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 08d58b0fc7b9175428908a73ecc9ad32, type: 3}
   - voiceName: 12
     audioClip: {fileID: 8300000, guid: 3b7753afa3ff1e347aa2be89f1b9948e, type: 3}
+  - voiceName: 15
+    audioClip: {fileID: 8300000, guid: 775cd37126f54364cbec6793bb058e5a, type: 3}
   musicSource: {fileID: 1768206380766782042}
   voiceSource: {fileID: 4522347751368078604}
   ambianceSource: {fileID: 1207854914400730093}

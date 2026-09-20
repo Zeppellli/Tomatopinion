@@ -22,6 +22,7 @@ public class SoundManager : Singleton<SoundManager>
         ONU_Representative_A,
         ONU_Representative_B,
         ONU_Representative_C,
+        Cavewoman,
     }
 
     [Header("SetUp")]
