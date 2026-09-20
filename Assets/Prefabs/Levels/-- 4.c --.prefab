@@ -751,6 +751,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_Tomato
       objectReference: {fileID: 0}
+    - target: {fileID: 5927544086277977348, guid: 13ab5b10cee69574bb65bface1cb3d11, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1788
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927544086277977348, guid: 13ab5b10cee69574bb65bface1cb3d11, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1451
+      objectReference: {fileID: 0}
     - target: {fileID: 5964490602519613230, guid: 13ab5b10cee69574bb65bface1cb3d11, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
