@@ -12,6 +12,13 @@ public class UnitySceneManager : Singleton<UnitySceneManager>
     }
     private UnityScenes currentUnityScene = UnityScenes.Start;
 
+    private void Awake()
+    {
+        base.Awake();
+        LoadableObject.loadHats = false;
+        LoadableObject.loadBowties = false;
+    }
+
     public void LoadScene(UnityScenes sceneToLoad, bool forceLoad = false)
     {
         if (!forceLoad && sceneToLoad == currentUnityScene) { return; }

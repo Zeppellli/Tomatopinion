@@ -7,13 +7,13 @@ public class LoadableObject : MonoBehaviour
 
     [SerializeField] private bool isHat;
     [SerializeField] private bool isBowtie;
-    [HideInInspector] public static bool loadHats = false;
-    [HideInInspector] public static bool loadBowties = false;
+    [HideInInspector] public static bool loadHats;
+    [HideInInspector] public static bool loadBowties;
 
     private void Awake()
     {
-        loadHats = false;
-        loadBowties = false;
+        // loadHats = false;
+        // loadBowties = false;
         GameSceneManager.OnSceneLoaded += LoadSelf;
         GameSceneManager.OnSceneUnloaded += UnloadSelf;
     }
@@ -35,10 +35,18 @@ public class LoadableObject : MonoBehaviour
 
     private void LoadSelf(string id)
     {
-        if (!isHat && !isBowtie)
+        if (loadHats)
         {
-            if (!listeningToIDs.Contains(id)) { return; }
+            if (isHat) { gameObject.SetActive(true); }
+            if (isBowtie) { gameObject.SetActive(false); }
         }
+        if (loadBowties)
+        {
+            if (isHat) { gameObject.SetActive(false); }
+            if (isBowtie) { gameObject.SetActive(true); }
+        }
+
+        if (!listeningToIDs.Contains(id)) { return; }
 
         gameObject.SetActive(true);
         PlaySoundOnEnable soundComp;
