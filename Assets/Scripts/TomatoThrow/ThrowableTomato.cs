@@ -1,8 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
-using UnityEngine.WSA;
 
 public class ThrowableTomato : MonoBehaviour
 {
