@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class UI_ThrowableTomato : MonoBehaviour
 {
@@ -21,6 +22,10 @@ public class UI_ThrowableTomato : MonoBehaviour
     [SerializeField] private float gravity;
     [SerializeField] private float contactMargin = 1f;
     [SerializeField] private float scaleOnLanding = 0.3f;
+    [SerializeField] private float missShrinkSpeed = 5f;
+    private bool isMissed;
+    [SerializeField] private float swipeWindow = 0.15f;
+    private readonly List<(Vector2 pos, float time)> mouseSamples = new List<(Vector2, float)>();
 
     [Header("Spin / Respawn")]
     [SerializeField] private float rotationPerFrame;
@@ -32,7 +37,6 @@ public class UI_ThrowableTomato : MonoBehaviour
     private Camera uiCamera;
 
     private Vector2 mouseVelocity;
-    private Vector2 lastMousePosition;
     private Vector2 initialPosition;
     private Vector2 targetPosition;
     private Vector2 targetPositionWithoutLob;
@@ -125,6 +129,12 @@ public class UI_ThrowableTomato : MonoBehaviour
     {
         if (hasLanded) return;
 
+        if (isMissed)
+        {
+            ShrinkAway();
+            return;
+        }
+
         CalculateLobOffset();
         targetPositionWithoutLob = Vector2.Lerp(targetPositionWithoutLob, targetPosition, tomatoSpeed * Time.deltaTime);
         rect.localScale = Vector3.Lerp(rect.localScale, targetAbsoluteScale, tomatoSpeed * Time.deltaTime);
@@ -136,30 +146,58 @@ public class UI_ThrowableTomato : MonoBehaviour
         }
     }
 
+    void ShrinkAway()
+    {
+        rect.localScale = Vector3.Lerp(rect.localScale, Vector3.zero, missShrinkSpeed * Time.deltaTime);
+
+        if (rect.localScale.x <= initialScale.x * 0.01f)
+        {
+            rect.localScale = Vector3.zero;
+            tomatoImage.enabled = false;
+            hasLanded = true;
+        }
+    }
+
     void Land()
     {
         Pos = targetPosition;
         rect.localScale = targetAbsoluteScale;
-        hasLanded = true;
-        ShowSplash(true);
 
+        UI_Target hit = GetTargetUnderTomato();
+        if (hit != null)
+        {
+            hasLanded = true;
+            ShowSplash(true);
+            hit.Hit();
+        }
+        else
+        {
+            isMissed = true;
+        }
+    }
+
+    UI_Target GetTargetUnderTomato()
+    {
         Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(uiCamera, rect.position);
         foreach (UI_Target target in FindObjectsByType<UI_Target>(FindObjectsSortMode.None))
         {
-            if (target.ContainsScreenPoint(screenPoint, uiCamera))
-            {
-                target.Hit();
-                break;
-            }
+            if (target.ContainsScreenPoint(screenPoint, uiCamera)) return target;
         }
+        return null;
     }
 
     void CalculateMouseVelocity()
     {
         Vector2 mousePosition = GetMouseLocalPosition();
-        if (Time.deltaTime > 0f)
-            mouseVelocity = (mousePosition - lastMousePosition) / Time.deltaTime;
-        lastMousePosition = mousePosition;
+        mouseSamples.Add((mousePosition, Time.time));
+
+        while (mouseSamples.Count > 1 && Time.time - mouseSamples[0].time > swipeWindow)
+            mouseSamples.RemoveAt(0);
+
+        Vector2 swipeStart = mouseSamples[0].pos;
+        float elapsed = Time.time - mouseSamples[0].time;
+
+        mouseVelocity = elapsed > 0f ? (mousePosition - swipeStart) / elapsed : Vector2.zero;
     }
 
     public bool checkIfThrown()
@@ -186,7 +224,6 @@ public class UI_ThrowableTomato : MonoBehaviour
         initialUpwardsVelocity = upwardsVelocity;
         targetPositionWithoutLob = Pos;
         targetAbsoluteScale = rect.localScale * scaleOnLanding;
-        lastMousePosition = GetMouseLocalPosition();
         Splash.SetActive(false);
     }
 
@@ -204,6 +241,7 @@ public class UI_ThrowableTomato : MonoBehaviour
         isThrown = false;
         hasLanded = false;
         isPrepared = false;
+        isMissed = false;
     }
 
     void SpinTomato()

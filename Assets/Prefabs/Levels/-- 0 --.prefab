@@ -155,6 +155,7 @@ GameObject:
   - component: {fileID: 7055514169583053941}
   - component: {fileID: 3799453349521136538}
   - component: {fileID: 6231886460959640841}
+  - component: {fileID: 2641821804874834434}
   m_Layer: 5
   m_Name: CavemanB
   m_TagString: Untagged
@@ -220,6 +221,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2641821804874834434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5224927435754531814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c3e1803079ca244c9dbdbc3ff405842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_Target
+  targetScene: 1
+  hitArea: {fileID: 0}
+  activatesHats: 0
+  activatesBowties: 1
 --- !u!1 &6997261948761499764
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,6 +248,7 @@ GameObject:
   - component: {fileID: 6172668171430955633}
   - component: {fileID: 5838254558876040458}
   - component: {fileID: 6551132128775999960}
+  - component: {fileID: 2525099704789650169}
   m_Layer: 5
   m_Name: CavemanA
   m_TagString: Untagged
@@ -296,6 +314,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2525099704789650169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6997261948761499764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c3e1803079ca244c9dbdbc3ff405842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_Target
+  targetScene: 1
+  hitArea: {fileID: 0}
+  activatesHats: 1
+  activatesBowties: 0
 --- !u!1001 &3726782323235111451
 PrefabInstance:
   m_ObjectHideFlags: 0

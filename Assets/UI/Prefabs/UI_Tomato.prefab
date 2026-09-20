@@ -52,17 +52,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UI_ThrowableTomato
   tomatoImage: {fileID: 2856286604773039217}
   Splash: {fileID: 2354923562314631681}
-  distancePerSpeed: 1
+  distancePerSpeed: 0.3
   minThrowDistance: 50
   maxThrowDistance: 1000
   moveable: 0
-  minimumThrowVelocity: 100
+  minimumThrowVelocity: 600
   preparedHeight: 50
   tomatoSpeed: 5
   upwardsVelocity: 4.6
   gravity: 9.8
   contactMargin: 1
   scaleOnLanding: 0.3
+  missShrinkSpeed: 5
+  swipeWindow: 0.15
   rotationPerFrame: 45
   frameRate: 12
   respawnTime: 1
