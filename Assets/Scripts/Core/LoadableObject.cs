@@ -28,6 +28,10 @@ public class LoadableObject : MonoBehaviour
         if (isHat) { gameObject.SetActive(loadHats); }
         if (isBowtie) { gameObject.SetActive(loadBowties); }
     }
+    void Update()
+    {
+        Debug.Log($"HAT: {loadHats}, BOWTIE: {loadBowties}");
+    }
 
     private void LoadSelf(string id)
     {
