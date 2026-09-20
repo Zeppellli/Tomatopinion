@@ -80,6 +80,16 @@ MonoBehaviour:
   fadeOutDuration: 0.25
   maxVoiceVolume: 1
   maxAmbianceVolume: 0.3
+  allShocks:
+  - {fileID: 8300000, guid: 663341f1ad75a994c86f03b0f06b24c8, type: 3}
+  - {fileID: 8300000, guid: 912329fd2c130de449b5095e21da72fb, type: 3}
+  - {fileID: 8300000, guid: cee621f2c721d2f49acaea8ce12d3ac2, type: 3}
+  - {fileID: 8300000, guid: f88169b89959eb04c86d7a0b0eaed0e2, type: 3}
+  - {fileID: 8300000, guid: 0590d7a94f177964ba53bf554ef3f694, type: 3}
+  - {fileID: 8300000, guid: 47e59969dd96dec4fb0c6fcc815a2241, type: 3}
+  - {fileID: 8300000, guid: 3760090565cff2544a1916f2adfb24b5, type: 3}
+  - {fileID: 8300000, guid: 88bd73c2074c7124d9c6c07c2b29a159, type: 3}
+  - {fileID: 8300000, guid: 22449ca7727bb0b4e8965ab8f4bb9c3b, type: 3}
 --- !u!1 &3428642900521027345
 GameObject:
   m_ObjectHideFlags: 0

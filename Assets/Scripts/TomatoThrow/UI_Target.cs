@@ -6,6 +6,7 @@ public class UI_Target : MonoBehaviour
     [SerializeField] private RectTransform hitArea;
 
     [Header("Case by Case bullshit")]
+    [SerializeField] private bool isStartButton;
     [SerializeField] private bool activatesHats;
     [SerializeField] private bool activatesBowties;
 
@@ -21,8 +22,14 @@ public class UI_Target : MonoBehaviour
 
     public void Hit()
     {
-        AdditionalEffects();
+        if (isStartButton)
+        {
+            UnitySceneManager.Instance.LoadScene(UnitySceneManager.UnityScenes.Game);
+            return;
+        }
 
+        SoundManager.Instance.EarlyLineStop();
+        AdditionalEffects();
         GameSceneManager.Instance.GoToScene(targetScene);
     }
     

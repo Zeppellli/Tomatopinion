@@ -15,6 +15,8 @@ public class GameSceneManager : Singleton<GameSceneManager>
     public static Action<string> OnSceneLoaded;
     public static Action<string> OnSceneUnloaded;
 
+    [SerializeField] private float timeBeforeCurtains;
+
     private string idToLoad;
     public static Action OnCurtainCover;
 
@@ -45,6 +47,15 @@ public class GameSceneManager : Singleton<GameSceneManager>
 
     public void GoToScene(string id)
     {
+        StartCoroutine(SceneLoadingRoutine(id));
+    }
+
+    private IEnumerator SceneLoadingRoutine(string id)
+    {
+        //SoundManager.Instance.EarlyLineStop();
+
+        yield return new WaitForSeconds(timeBeforeCurtains);
+
         CurtainAnimator.Instance.PlayCurtainAnim();
         OnCurtainCover += DoTheLoad;
         idToLoad = id;

@@ -38,6 +38,9 @@ public class SoundManager : Singleton<SoundManager>
     [SerializeField, Range(0f, 1f)] private float maxVoiceVolume;
     [SerializeField, Range(0f, 1f)] private float maxAmbianceVolume;
 
+    [Header("Shock FX")]
+    [SerializeField] private AudioClip[] allShocks;
+
     public static Action<Voices> OnVoiceStart;
 
     private void Start()
@@ -50,6 +53,7 @@ public class SoundManager : Singleton<SoundManager>
         AudioClip clip = GetClipFromVoice(voice);
         voiceSource.clip = clip;
         voiceSource.volume = 0;
+        voiceSource.loop = true;
 
         if (randomizeStartTime)
         {
@@ -72,6 +76,17 @@ public class SoundManager : Singleton<SoundManager>
         yield return StartCoroutine(FadeVolume(voiceSource, maxVoiceVolume, 0f, fadeOut));
 
         voiceSource.Stop();
+    }
+
+    public void EarlyLineStop(bool playShockSound = true)
+    {
+        voiceSource.Stop();
+        voiceSource.volume = maxVoiceVolume;
+
+        if (playShockSound)
+        {
+            voiceSource.PlayOneShot(allShocks[UnityEngine.Random.Range(0, allShocks.Length)]);
+        }
     }
 
     public void StartAmbiance(AudioClip clip)

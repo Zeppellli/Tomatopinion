@@ -63,3 +63,4 @@ MonoBehaviour:
   - x6
   - XX
   startingSceneID: 0
+  timeBeforeCurtains: 1
