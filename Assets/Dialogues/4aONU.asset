@@ -29,19 +29,19 @@ MonoBehaviour:
     duration: 6
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 0
-    voice: 12
+    voice: 14
   - line: Our goal today is not to make sure everyone is taken care of, <4> this
       will just not work.
     duration: 6
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 0
-    voice: 12
+    voice: 14
   - line: Our goal instead is to make sure the remaining five percent can continue
       to contribute to the cause.
     duration: 6
     delayBeforeNextLine: 0.5
     backgroundFadeAwayOnEnd: 0
-    voice: 12
+    voice: 14
   - line: "Those five percent are useful, <2> and that\u2019s everything that matters."
     duration: 6
     delayBeforeNextLine: 0
@@ -57,7 +57,7 @@ MonoBehaviour:
     duration: 4
     delayBeforeNextLine: 0.5
     backgroundFadeAwayOnEnd: 0
-    voice: 14
+    voice: 12
   - line: They are not in the model. <3>Let them starve.
     duration: 5
     delayBeforeNextLine: 0.5
@@ -67,7 +67,7 @@ MonoBehaviour:
     duration: 5
     delayBeforeNextLine: 0.5
     backgroundFadeAwayOnEnd: 0
-    voice: 12
+    voice: 14
   - line: "You\u2019re right. We might need a more\u2026 <3>  direct solution."
     duration: 5
     delayBeforeNextLine: 0.5

@@ -23,7 +23,7 @@ MonoBehaviour:
     duration: 6
     delayBeforeNextLine: 0.5
     backgroundFadeAwayOnEnd: 0
-    voice: 12
+    voice: 14
   - line: I was elected to keep my people fed and alive, <3> not to play nice while
       they are starving in the streets !
     duration: 7
@@ -41,25 +41,25 @@ MonoBehaviour:
     duration: 5
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 0
-    voice: 14
+    voice: 12
   - line: The only thing we would achieve is pain and suffering upon those that would
       survive.
     duration: 6
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 0
-    voice: 14
+    voice: 12
   - line: 'What I propose may be drastic, <2> but it might be the only way for humanity
       to endure, <3> one way or another. '
     duration: 8
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 0
-    voice: 14
+    voice: 12
   - line: 'What I propose may be drastic, <2> but it might be the only way for humanity
       to endure, <3> one way or another. '
     duration: 8
     delayBeforeNextLine: 0.5
     backgroundFadeAwayOnEnd: 0
-    voice: 14
+    voice: 12
   - line: 'What you propose is madness ! '
     duration: 3
     delayBeforeNextLine: 0
@@ -76,23 +76,23 @@ MonoBehaviour:
     duration: 7
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 0
-    voice: 14
+    voice: 12
   - line: "The current population is only degrading our earth, <3>without action
       we\u2019re gonna destroy ourselves and our habitat with it."
     duration: 7
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 0
-    voice: 14
+    voice: 12
   - line: We need to stop all human activity as quickly as possible.
     duration: 5
     delayBeforeNextLine: 0.5
     backgroundFadeAwayOnEnd: 0
-    voice: 14
+    voice: 12
   - line: We simply have no other choice.
     duration: 3
     delayBeforeNextLine: 0.5
     backgroundFadeAwayOnEnd: 0
-    voice: 14
+    voice: 12
   - line: "It doesn\u2019t matter, <2> we won\u2019t let ourselves lose control."
     duration: 5
     delayBeforeNextLine: 0.5
