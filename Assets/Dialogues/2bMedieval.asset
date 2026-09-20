@@ -10,63 +10,65 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85cd55c6b0955304c90bc3c8ea81e738, type: 3}
-  m_Name: 2aMedieval
+  m_Name: 2bMedieval
   m_EditorClassIdentifier: Assembly-CSharp::FullSceneDialogue
   dialogueLinesInOrder:
-  - line: ' I hereby condemn thee to perish by the sacred flame,<1> for the following
-      crimes'
+  - line: Silence all !<2> Before thee stands this fallen wretch
     duration: 4
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 0
     voice: 5
-  - line: theft against the church,<2>blasphemous life
-    duration: 4
-    delayBeforeNextLine: 0
-    backgroundFadeAwayOnEnd: 0
-    voice: 5
-  - line: bearing false witness before the Almighty,<2> heresy,<1> and deviltry.
-    duration: 5
-    delayBeforeNextLine: 1
-    backgroundFadeAwayOnEnd: 1
-    voice: 5
-  - line: 'May this glorious, purging fire cleanse thy wretched soul of all its sins. '
-    duration: 4
-    delayBeforeNextLine: 1
-    backgroundFadeAwayOnEnd: 1
-    voice: 5
-  - line: Was I to guard your walls on an empty belly?<3> You left your protectors
-      to starve without pay!
+  - line: ' who, <1>  while being in my good graces as lieutenant in my guard, <4> 
+      committed the crime of adultery,'
     duration: 6
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 0
-    voice: 6
-  - line: I beg thee, show mercy!
+    voice: 5
+  - line: and with my own wife !
+    duration: 3
+    delayBeforeNextLine: 1
+    backgroundFadeAwayOnEnd: 1
+    voice: 5
+  - line: Bear witness,
     duration: 2
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 1
+    voice: 5
+  - line: as this punishment is what awaits all, man or woman, adult or child, for
+      whoever dares to go against the natural order of life and class will be struck
+      down !
+    duration: 6
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 5
+  - line: 'I die innocent, for my heart was pure! <2> A love this strong cannot be
+      quenched! '
+    duration: 5
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
     voice: 6
   - line: Silence!
     duration: 1
     delayBeforeNextLine: 1
-    backgroundFadeAwayOnEnd: 1
+    backgroundFadeAwayOnEnd: 0
     voice: 5
   - line: Thou hast broken the sacred laws of the Almighty.
     duration: 3
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 1
     voice: 5
-  - line: "Who art thou to decide how the Lord\u2019s gold is distributed? Thou wretch
-      shalt burn for thy sins!"
+  - line: Thou shalt pay for your acts, and god as my witness,
     duration: 5
-    delayBeforeNextLine: 2
-    backgroundFadeAwayOnEnd: 1
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
     voice: 5
-  - line: 'Let the holy flames claim thee, and may God have mercy upon thy spirit! '
+  - line: ' thy death shall be a warning to all about the dangers of not knowing
+      thy place !'
     duration: 4
     delayBeforeNextLine: 1
-    backgroundFadeAwayOnEnd: 1
+    backgroundFadeAwayOnEnd: 0
     voice: 5
-  - line: //END// (2b)
+  - line: //END// (2a)
     duration: 3
     delayBeforeNextLine: 3
     backgroundFadeAwayOnEnd: 1
