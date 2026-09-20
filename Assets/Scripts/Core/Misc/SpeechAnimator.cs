@@ -13,6 +13,7 @@ public class SpeechAnimator : MonoBehaviour
     private void Awake()
     {
         SoundManager.OnVoiceStart += CheckEnable;
+        gameObject.SetActive(false);
     }
     private void OnDestroy()
     {

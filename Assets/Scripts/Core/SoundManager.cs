@@ -54,9 +54,11 @@ public class SoundManager : Singleton<SoundManager>
 
     public IEnumerator PlayForDuration(Voices voice, float duration)
     {
-        OnVoiceStart?.Invoke(voice);
-        if (voice == Voices.None) { yield break; }
-
+        if (voice == Voices.None)
+        {
+            voiceSource.Stop();
+            yield break;
+        }
         int token = ++voiceToken;
 
         AudioClip clip = GetClipFromVoice(voice);
@@ -79,7 +81,7 @@ public class SoundManager : Singleton<SoundManager>
 
             voiceSource.Play();
             currentVoice = voice;
-            //OnVoiceStart?.Invoke(voice);
+            OnVoiceStart?.Invoke(voice);
             Debug.Log($"PLAYING {voice} from {voiceSource.time:F2}s");
         }
 
@@ -89,7 +91,17 @@ public class SoundManager : Singleton<SoundManager>
         yield return StartCoroutine(FadeVoice(token, maxVoiceVolume, fadeIn));
         if (token != voiceToken) yield break;
 
-        yield return new WaitForSeconds(Mathf.Max(0f, duration - fadeIn - fadeOut));
+        float hold = Mathf.Max(0f, duration - fadeIn - fadeOut);
+        float waited = 0f;
+
+        while (waited < hold)
+        {
+            if (token != voiceToken) yield break;
+
+            waited += Time.deltaTime;
+            yield return null;
+        }
+
         if (token != voiceToken) yield break;
 
         yield return StartCoroutine(FadeVoice(token, 0f, fadeOut));
@@ -174,6 +186,8 @@ public class SoundManager : Singleton<SoundManager>
 
     private AudioClip GetClipFromVoice(Voices voice)
     {
+        if (voice == Voices.None) { return null; }
+
         foreach (VoiceLinker link in all_voices)
         {
             if (link.voiceName == voice) { return link.audioClip; }
