@@ -10,6 +10,7 @@ public class UI_Target : MonoBehaviour
     [SerializeField] private bool isRestartButton;
     [SerializeField] private bool activatesHats;
     [SerializeField] private bool activatesBowties;
+    [SerializeField] private bool doesNothing;
 
     void Awake()
     {
@@ -23,6 +24,8 @@ public class UI_Target : MonoBehaviour
 
     public void Hit()
     {
+        if (doesNothing) { return; }
+
         if (isStartButton)
         {
             UnitySceneManager.Instance.LoadScene(UnitySceneManager.UnityScenes.Game);
