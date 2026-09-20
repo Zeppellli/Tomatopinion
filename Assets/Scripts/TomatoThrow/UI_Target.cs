@@ -7,6 +7,7 @@ public class UI_Target : MonoBehaviour
 
     [Header("Case by Case bullshit")]
     [SerializeField] private bool isStartButton;
+    [SerializeField] private bool isRestartButton;
     [SerializeField] private bool activatesHats;
     [SerializeField] private bool activatesBowties;
 
@@ -25,6 +26,11 @@ public class UI_Target : MonoBehaviour
         if (isStartButton)
         {
             UnitySceneManager.Instance.LoadScene(UnitySceneManager.UnityScenes.Game);
+            return;
+        }
+        if (isRestartButton)
+        {
+            UnitySceneManager.Instance.LoadScene(UnitySceneManager.UnityScenes.Start);
             return;
         }
 
