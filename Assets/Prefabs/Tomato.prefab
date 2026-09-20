@@ -373,7 +373,7 @@ MonoBehaviour:
   scaleOnLanding: 0.3
   Splash: {fileID: 669545984713876114}
   moveable: 0
-  minimumThrowVelocity: 50
+  minimumThrowVelocity: 70
   targetHeight: {fileID: 3128278991535260160}
   tomatoSprite: {fileID: 7696452444808432622}
   tomatoSpeed: 5
