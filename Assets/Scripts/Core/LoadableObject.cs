@@ -12,6 +12,8 @@ public class LoadableObject : MonoBehaviour
 
     private void Awake()
     {
+        loadHats = false;
+        loadBowties = false;
         GameSceneManager.OnSceneLoaded += LoadSelf;
         GameSceneManager.OnSceneUnloaded += UnloadSelf;
     }
@@ -29,7 +31,10 @@ public class LoadableObject : MonoBehaviour
 
     private void LoadSelf(string id)
     {
-        if (!listeningToIDs.Contains(id)) { return; }
+        if (!isHat && !isBowtie)
+        {
+            if (!listeningToIDs.Contains(id)) { return; }
+        }
 
         gameObject.SetActive(true);
         PlaySoundOnEnable soundComp;
