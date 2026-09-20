@@ -103,7 +103,6 @@ public class ThrowableTomato : MonoBehaviour
         float xValueRaycast = (yValueRaycast / mouseVelocity.y) * mouseVelocity.x;
         Vector2 raycast = new Vector2(xValueRaycast, yValueRaycast);
         targetPosition = new Vector2(transform.position.x + xValueRaycast, transform.position.y + yValueRaycast);
-        print(targetPosition);
 
     }
     void sendTomatoToTarget()
@@ -178,7 +177,6 @@ public class ThrowableTomato : MonoBehaviour
                 rotation += rotationPerFrame;
                 tomatoSprite.transform.rotation = Quaternion.Euler(0f,0f,rotation);
                 spinCounter = 0f;
-                print("HI");
             }
         }
     }
