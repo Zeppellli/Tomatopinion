@@ -28,6 +28,7 @@ public class SoundManager : Singleton<SoundManager>
     [SerializeField] private VoiceLinker[] all_voices;
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource voiceSource;
+    [SerializeField] private bool randomizeStartTime;
 
     [Header("Voice Smoothing")]
     [SerializeField] private float fadeInDuration;
@@ -46,8 +47,11 @@ public class SoundManager : Singleton<SoundManager>
         voiceSource.clip = clip;
         voiceSource.volume = 0;
 
-        float maxStart = Mathf.Max(0f, clip.length - duration);
-        voiceSource.time = UnityEngine.Random.Range(0f, maxStart);
+        if (randomizeStartTime)
+        {
+            float maxStart = Mathf.Max(0f, clip.length - duration);
+            voiceSource.time = UnityEngine.Random.Range(0f, maxStart);
+        }
         
         voiceSource.Play();
         Debug.Log($"PLAYING {voice} from {voiceSource.time:F2}s");
