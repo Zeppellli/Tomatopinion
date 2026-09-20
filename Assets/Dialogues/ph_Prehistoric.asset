@@ -13,23 +13,36 @@ MonoBehaviour:
   m_Name: ph_Prehistoric
   m_EditorClassIdentifier: Assembly-CSharp::FullSceneDialogue
   dialogueLinesInOrder:
-  - line: Ughh Hug Ghuuurr<1>One<2>Two<0.5>and a Half
-    duration: 6
-    delayBeforeNextLine: 1
-    backgroundFadeAwayOnEnd: 0
-    voice: 1
-  - line: Gahh GORR Hurgh
-    duration: 5
-    delayBeforeNextLine: 2
-    backgroundFadeAwayOnEnd: 1
-    voice: 2
-  - line: Burg gurhn hurg....
+  - line: Kurr thinks he look good.
     duration: 4
     delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 1
+  - line: Dugg thinks Kurr looks bad, <3>and that Dugg looks much better because
+      superior intellect and sense of style.
+    duration: 6
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 0
+    voice: 2
+  - line: Kurr thinks Dugg stupid and jealous of Kurr. <3> Dugg should accept hats
+      are better than scarfs.
+    duration: 6
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 1
+  - line: Dugg likes scarfs, <2> and anyone who thinks not like Dugg is stupid, <4>
+      just like Kurr.
+    duration: 5
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 0
+    voice: 2
+  - line: Kurr is going to hit Dugg if Dugg continues to have no taste.
+    duration: 6
+    delayBeforeNextLine: 0.5
     backgroundFadeAwayOnEnd: 1
     voice: 1
   - line: //END// (1)
-    duration: 3
+    duration: 2
     delayBeforeNextLine: 0
-    backgroundFadeAwayOnEnd: 1
+    backgroundFadeAwayOnEnd: 0
     voice: 0

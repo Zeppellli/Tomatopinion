@@ -13,18 +13,70 @@ MonoBehaviour:
   m_Name: ph_Antiquity
   m_EditorClassIdentifier: Assembly-CSharp::FullSceneDialogue
   dialogueLinesInOrder:
-  - line: Wow we're smart
+  - line: Life is short and uncertain,<2> pleasure is the one true certainty,
     duration: 6
-    delayBeforeNextLine: 1
+    delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 0
-    voice: 0
-  - line: Yeah aren't we?
+    voice: 3
+  - line: so why should I trade a warm meal and some good wine for an uncertain future
+      ?
     duration: 5
-    delayBeforeNextLine: 2
-    backgroundFadeAwayOnEnd: 1
-    voice: 0
-  - line: That's crazy twin
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 0
+    voice: 3
+  - line: Because the pleasure you feel is limited. <2> As soon as you stop feeding
+      it, it stops fulfilling you.
+    duration: 6
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 4
+  - line: Devotion gives a continuous fulfillment, <2>  a joy that does not depend
+      upon your materialistic wealth.
+    duration: 5
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 0
+    voice: 4
+  - line: Yet you deny yourself the very joys that make you human. <2> Is a life
+      of fasting and prayer not just a slow refusal to live ?
+    duration: 6
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 0
+    voice: 3
+  - line: 'I do not refuse life, <3> I simply do not let my urges control me. '
+    duration: 5
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 4
+  - line: I enjoy bread and friendship too, <3> but I enjoy it as a gift and not
+      as a prize.
+    duration: 6
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 4
+  - line: ' I lose nothing when I cannot access them.'
+    duration: 4
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 0
+    voice: 4
+  - line: "That\u2019s convenient : you suffer no loss because you already renounced
+      everything you could lose."
+    duration: 6
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 0
+    voice: 3
+  - line: And you, have you not renounced your future ?
     duration: 4
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 1
-    voice: 0
+    voice: 4
+  - line: What will you have after you have eaten all your bread, <2>drank all your
+      wine <1>and buried all your friends ?
+    duration: 6
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 1
+    voice: 4
+  - line: //END// (2a)
+    duration: 2
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 4

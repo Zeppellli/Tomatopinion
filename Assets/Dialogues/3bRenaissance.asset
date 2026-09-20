@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85cd55c6b0955304c90bc3c8ea81e738, type: 3}
+  m_Name: 3bRenaissance
+  m_EditorClassIdentifier: Assembly-CSharp::FullSceneDialogue
+  dialogueLinesInOrder:
+  - line: Pity the poor fool standing before ye, <2> kind gentlefolk
+    duration: 5
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 9
+  - line: Me brain be completely empty, <2> like me belly
+    duration: 5
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 0
+    voice: 9
+  - line: '*audience laughs*'
+    duration: 2
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 0
+    voice: 10
+  - line: "I haven\u2019t washed me neck since the last grand king was crowned"
+    duration: 5
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 0
+    voice: 9
+  - line: "Me belly makes noises like a sick hog, but I certainly can\u2019t work,
+      <2> the effort would kill me !"
+    duration: 5
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 0
+    voice: 9
+  - line: '*audience laughs*'
+    duration: 2
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 0
+    voice: 10
+  - line: Me don't need no gold, <2> just a stale crust of bread <1> or a chewed
+      bone
+    duration: 5
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 9
+  - line: Us lowfolk be too foolish to taste difference anyway, <2> me already ate
+      my dog to sustain myself
+    duration: 5
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 0
+    voice: 9
+  - line: '*audience laughs*'
+    duration: 2
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 0
+    voice: 10
+  - line: Or if no bread be found in ye fine silk pockets
+    duration: 3
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 9
+  - line: Might I just get close and stroke ye lovely, <2>flowy hair for a moment
+      ?
+    duration: 5
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 0
+    voice: 9
+  - line: '*audience laughs*'
+    duration: 2
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 1
+    voice: 10
+  - line: //END// (4a)
+    duration: 2
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 10

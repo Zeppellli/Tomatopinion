@@ -62,4 +62,10 @@ MonoBehaviour:
   - id: 3a
     dialogue: {fileID: 11400000, guid: f3ca728c0d78057419051a33525f249c, type: 2}
     isStopped: 0
+  - id: 3b
+    dialogue: {fileID: 11400000, guid: 1c077e7d5b7b9c343b399b33f506f707, type: 2}
+    isStopped: 0
+  - id: 3c
+    dialogue: {fileID: 11400000, guid: 0625d4f58691f5342875a722cc302559, type: 2}
+    isStopped: 0
   fadeDuration: 0.75

@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85cd55c6b0955304c90bc3c8ea81e738, type: 3}
+  m_Name: 3cRenaissance
+  m_EditorClassIdentifier: Assembly-CSharp::FullSceneDialogue
+  dialogueLinesInOrder:
+  - line: Citizens, we have won !
+    duration: 4
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 11
+  - line: The privileges that crushed our fathers are gone, <3>and the men who held
+      them no longer rule us.
+    duration: 6
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 11
+  - line: Every day the list of the condemned grows longer
+    duration: 4
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 11
+  - line: Every day the mass graves grow larger
+    duration: 4
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 11
+  - line: I fear that tomorrow, <2> it may be your name on that list.
+    duration: 5
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 11
+  - line: I do not ask you to forget what was done to us.
+    duration: 4
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 11
+  - line: I simply want this bloody revolution to stop,
+    duration: 5
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 11
+  - line: and for peace to finally return, <2> so that we can build a better future.
+    duration: 6
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 11
+  - line: 'They are listening to us, <2> we did enough. '
+    duration: 4
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 11
+  - line: We can now enter peaceful negotiations <3> and end this cycle of violence.
+    duration: 6
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 11
+  - line: 'Let us lay down the blade, <2> together. '
+    duration: 4
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 1
+    voice: 11
+  - line: //END// (4b)
+    duration: 5
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 11

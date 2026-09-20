@@ -13,14 +13,75 @@ MonoBehaviour:
   m_Name: 3aRenaissance
   m_EditorClassIdentifier: Assembly-CSharp::FullSceneDialogue
   dialogueLinesInOrder:
-  - line: 
-    duration: 4
+  - line: '*religious chants*'
+    duration: 6
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 0
     voice: 7
   - line: ' Citizens of the Faith,<2> our prayers during this dark plague have not
       gone unheard.'
     duration: 6
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 8
+  - line: 'The High Council hath received the holy vision: God demands a vessel of
+      purity to stay His righteous hand.'
+    duration: 6
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 8
+  - line: 'It has thus been decreed across all parishes:'
+    duration: 6
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 8
+  - line: the innocent flesh of our youth must be surrendered.
+    duration: 6
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 8
+  - line: Children shall be chosen at random from every ward and quarter, consecrated
+      in holy oils,
+    duration: 6
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 8
+  - line: and delivered unto the flame to deliver us from this devastating pestilence.
+    duration: 6
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 8
+  - line: "Suppress your tears and let no mother\u2019s wail nor father\u2019s sorrow
+      breach these sacred walls."
+    duration: 6
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 8
+  - line: They should instead pray that their lineage be found worthy of the sacrifice
+      as they will be savior of all those listening today.
+    duration: 6
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 8
+  - line: "Chosen parents, your children are no longer yours, they are the Church\u2019s
+      offer, and any soul caught weeping shall be judged an enemy of the Faith."
+    duration: 6
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 8
+  - line: '*religious chants*'
+    duration: 4
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 7
+  - line: "Bow your heads, accept the High Council\u2019s decree, and let the holy
+      gathering begin. "
+    duration: 6
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 8
+  - line: //END// (X0)
+    duration: 2
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 0
     voice: 8
