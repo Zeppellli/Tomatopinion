@@ -37,6 +37,7 @@ public class SoundManager : Singleton<SoundManager>
     [SerializeField, Range(0f, 1f)] private float maxVoiceVolume;
     [SerializeField, Range(0f, 1f)] private float maxAmbianceVolume;
 
+    public static Action<Voices> OnVoiceStart;
 
     private void Start()
     {
@@ -56,6 +57,7 @@ public class SoundManager : Singleton<SoundManager>
         }
 
         voiceSource.Play();
+        OnVoiceStart?.Invoke(voice);
         Debug.Log($"PLAYING {voice} from {voiceSource.time:F2}s");
 
         float fadeIn = Mathf.Min(fadeInDuration, duration / 2f);
