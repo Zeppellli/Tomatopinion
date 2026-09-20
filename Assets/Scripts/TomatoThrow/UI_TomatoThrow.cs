@@ -136,7 +136,7 @@ public class UI_ThrowableTomato : MonoBehaviour
 
     public bool HasThrowVelocity()
     {
-        return (mouseVelocity.magnitude > minimumThrowVelocity && mouseVelocity.y > 0);
+        return (mouseVelocity.magnitude > minimumThrowVelocity && mouseVelocity.y > 50f);
     }
 
     public void ThrowTomato()
