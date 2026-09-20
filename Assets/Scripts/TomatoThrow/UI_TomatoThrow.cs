@@ -131,7 +131,7 @@ public class UI_ThrowableTomato : MonoBehaviour
         mousePosition.y = Mathf.Clamp(mousePosition.y, initialPosition.y, targetHeightY * 0.75f);
         //mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
         newPosition = mousePosition;
-        transform.position = newPosition;
+        transform.position = Vector3.MoveTowards(transform.position, newPosition, 0.5f * Vector3.Distance(transform.position, newPosition));
     }
 
     public bool HasThrowVelocity()
