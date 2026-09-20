@@ -13,8 +13,89 @@ MonoBehaviour:
   m_Name: 4bONU
   m_EditorClassIdentifier: Assembly-CSharp::FullSceneDialogue
   dialogueLinesInOrder:
-  - line: ajouter dialogues
+  - line: All our models are predicting a lack of all global resources within the
+      next fifty years.
+    duration: 6
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 0
+    voice: 12
+  - line: I was elected to keep my people fed and alive, <3> not to play nice while
+      they are starving in the streets !
+    duration: 7
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 13
+  - line: "My country may not have the resources to sustain ourselves, <3> but we
+      have the manpower and technology to make sure we\u2019ll get the last of it
+      !"
+    duration: 7
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 0
+    voice: 13
+  - line: 'At this point, <2>fighting a war is useless. '
     duration: 5
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 0
-    voice: 9
+    voice: 14
+  - line: The only thing we would achieve is pain and suffering upon those that would
+      survive.
+    duration: 6
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 14
+  - line: 'What I propose may be drastic, <2> but it might be the only way for humanity
+      to endure, <3> one way or another. '
+    duration: 8
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 14
+  - line: 'What I propose may be drastic, <2> but it might be the only way for humanity
+      to endure, <3> one way or another. '
+    duration: 8
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 0
+    voice: 14
+  - line: 'What you propose is madness ! '
+    duration: 3
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 13
+  - line: 'Reversing the course of society now is not a viable option : it <3> would
+      require so many sacrifices; <2> technological and human !'
+    duration: 8
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 0
+    voice: 13
+  - line: "The current population is only degrading our earth, <3>without action
+      we\u2019re gonna destroy ourselves and our habitat with it."
+    duration: 7
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 14
+  - line: "The current population is only degrading our earth, <3>without action
+      we\u2019re gonna destroy ourselves and our habitat with it."
+    duration: 7
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 14
+  - line: We need to stop all human activity as quickly as possible.
+    duration: 5
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 0
+    voice: 14
+  - line: We simply have no other choice.
+    duration: 3
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 0
+    voice: 14
+  - line: "It doesn\u2019t matter, <2> we won\u2019t let ourselves lose control."
+    duration: 5
+    delayBeforeNextLine: 0.5
+    backgroundFadeAwayOnEnd: 0
+    voice: 13
+  - line: CHOISIR COMMENT ON FAIT LES 2 FINS EN FONCTION DES CHOIX SUR LES SCENES
+      PRECEDENTES.
+    duration: 6
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 1
+    voice: 0

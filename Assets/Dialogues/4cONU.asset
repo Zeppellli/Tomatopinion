@@ -13,8 +13,47 @@ MonoBehaviour:
   m_Name: 4cONU
   m_EditorClassIdentifier: Assembly-CSharp::FullSceneDialogue
   dialogueLinesInOrder:
-  - line: ajouter dialogues
-    duration: 4
+  - line: Comrades, <1> a few hundred years ago, <2> the people refused to lay down
+      the blade, <1> and they were right.
+    duration: 6
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 0
-    voice: 11
+    voice: 12
+  - line: The Revolution has held ever since, <2> because we have never once mistaken
+      a pause for a victory.
+    duration: 5
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 12
+  - line: But its enemies have learned to hide.
+    duration: 3
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 12
+  - line: Every silence is a possible conspiracy, <2> and every closed door is a
+      possible betrayal.
+    duration: 5
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 12
+  - line: 'I propose the Universal Vigilance Directive: <2> every home, <0.5> every
+      message, <0.5> every hour of every citizen, <1> open to the Committee.'
+    duration: 7
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 12
+  - line: 'A loyal citizen will have nothing to hide. '
+    duration: 2
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 12
+  - line: A revolution with nothing to hide will never be undone.
+    duration: 3
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 1
+    voice: 12
+  - line: //END// (xc)
+    duration: 2
+    delayBeforeNextLine: 0
+    backgroundFadeAwayOnEnd: 0
+    voice: 0

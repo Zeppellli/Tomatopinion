@@ -554,6 +554,14 @@ PrefabInstance:
       propertyPath: textHolder
       value: 
       objectReference: {fileID: 1066092300}
+    - target: {fileID: 1655273348306900853, guid: 3f2b46e538c8d6b4d9855549c17ff38d, type: 3}
+      propertyPath: all_dialogues.Array.data[10].id
+      value: 3c
+      objectReference: {fileID: 0}
+    - target: {fileID: 1655273348306900853, guid: 3f2b46e538c8d6b4d9855549c17ff38d, type: 3}
+      propertyPath: all_dialogues.Array.data[10].dialogue
+      value: 
+      objectReference: {fileID: 11400000, guid: 0625d4f58691f5342875a722cc302559, type: 2}
     - target: {fileID: 6596869531272167555, guid: 3f2b46e538c8d6b4d9855549c17ff38d, type: 3}
       propertyPath: m_Name
       value: ==MANAGERS==
