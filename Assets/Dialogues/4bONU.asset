@@ -93,8 +93,7 @@ MonoBehaviour:
     delayBeforeNextLine: 0.5
     backgroundFadeAwayOnEnd: 0
     voice: 13
-  - line: CHOISIR COMMENT ON FAIT LES 2 FINS EN FONCTION DES CHOIX SUR LES SCENES
-      PRECEDENTES.
+  - line: //END// (x4)
     duration: 6
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 1

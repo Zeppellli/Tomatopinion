@@ -52,7 +52,7 @@ MonoBehaviour:
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 1
     voice: 12
-  - line: //END// (xc)
+  - line: //END// (x4)
     duration: 2
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 0

@@ -80,7 +80,7 @@ MonoBehaviour:
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 0
     voice: 8
-  - line: //END// (X0)
+  - line: //END// (x1)
     duration: 2
     delayBeforeNextLine: 0
     backgroundFadeAwayOnEnd: 0
