@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3548241847624938266}
   - component: {fileID: 2626616195541868656}
   - component: {fileID: 1637398061164112004}
+  - component: {fileID: 6248688570656526886}
   m_Layer: 5
   m_Name: C
   m_TagString: Untagged
@@ -97,6 +98,25 @@ MonoBehaviour:
   bopHeight: 4
   bopPerSec: 3
   easeSpeed: 6
+--- !u!114 &6248688570656526886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268860822625550010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c3e1803079ca244c9dbdbc3ff405842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_Target
+  targetScene: x5
+  hitArea: {fileID: 9217454452314956174}
+  isStartButton: 0
+  isRestartButton: 0
+  activatesHats: 0
+  activatesBowties: 0
+  doesNothing: 0
 --- !u!1 &2364309898705332860
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,6 +297,7 @@ MonoBehaviour:
   isRestartButton: 0
   activatesHats: 0
   activatesBowties: 0
+  doesNothing: 0
 --- !u!1 &3682050502968320340
 GameObject:
   m_ObjectHideFlags: 0
